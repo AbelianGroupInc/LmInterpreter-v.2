@@ -1,0 +1,1533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="8c3249fe-80c1-4ff2-bf78-5ad2f590632e" name="LmInterpreterClassDiagram" linkedPackageId="a29dacd8-8d0f-42aa-a4de-6f2ba302a047" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="cdb2ecd2-3871-42cd-986e-ad83c977140a" name="UnlimitedNatural" isAbstract="false" isLeaf="false" cachedFullName="UnlimitedNatural">
+        <elementDefinition Id="3ab42e7d-4969-445a-b209-471f5cb8209c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="7caa42de-767e-487f-8ee4-dad35434fcd2" name="LmInterpreterLib">
+        <ownedCommentsInternal>
+          <comment Id="c455ee51-4b76-4784-a8d8-2ebebad846f5">
+            <elementDefinition Id="3ba9e11e-16fc-45a0-9d24-7ca0c381a9fb" />
+            <body>Интерфейс для связи поля вывода или системы вывода с LmInterpreter.</body>
+            <annotatedElements>
+              <interfaceMoniker Id="ad2329fb-ec9d-4009-8d0b-45c86d6ff1eb" LastKnownName="IOutputField" />
+            </annotatedElements>
+          </comment>
+          <comment Id="28327b73-83d9-4437-b10e-a14d4cf7919c">
+            <elementDefinition Id="0ade034c-3904-4b3d-a8a8-9849f8ff54d2" />
+            <body>Наблюдатель. Содержит в себе список полей для вывода</body>
+            <annotatedElements>
+              <classMoniker Id="fb1af484-bc41-4306-b5f5-e09bd98cbd4e" LastKnownName="OutputSystem" />
+            </annotatedElements>
+          </comment>
+          <comment Id="1a604ecc-5d00-4a4e-8707-e8ca2d394a5a">
+            <elementDefinition Id="06c988e6-edae-4d3d-998a-ae9535f708fc" />
+            <body>Выполняет одну команду. Вызывая LearningMachine</body>
+            <annotatedElements>
+              <classMoniker Id="be364cb3-e944-4fe6-a326-38fed19018b4" LastKnownName="LmInterpreter" />
+            </annotatedElements>
+          </comment>
+          <comment Id="a0a9ac0b-e3b1-4b60-b3f9-806a70c3fb47">
+            <elementDefinition Id="9ebb1108-0574-4711-85ff-658bcceb34a6" />
+            <body>Считывает текст (string) и передает его в IParser после чего полученную программу передает в LearningMachine. </body>
+            <annotatedElements>
+              <classMoniker Id="be364cb3-e944-4fe6-a326-38fed19018b4" LastKnownName="LmInterpreter" />
+            </annotatedElements>
+          </comment>
+          <comment Id="446e4770-db83-4837-a08c-63350f6036f3">
+            <elementDefinition Id="0870e582-1ac8-43b2-92b4-346019f85644" />
+            <body>Фасад, управляет основными системами.</body>
+            <annotatedElements>
+              <classMoniker Id="be364cb3-e944-4fe6-a326-38fed19018b4" LastKnownName="LmInterpreter" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="d9c23690-8ee3-4bae-9120-7d228839b581" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="ad2329fb-ec9d-4009-8d0b-45c86d6ff1eb" name="IOutputField" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="046ec86f-c2ee-4fe5-a637-23e27a73a265" />
+              <ownedOperations>
+                <operation Id="2c55b02f-6192-4a62-a394-c592b7ebf928" name="Clear" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="99914195-5952-4e00-9798-709b8efc421d" />
+                </operation>
+                <operation Id="b4e5b508-df96-48cd-b7e9-4a88a59f7354" name="Write" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2608cf82-fb17-4da5-aead-bb2d20c21cf9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b6ddb782-3178-454d-84c5-7d7dfd915b52" name="buffer" direction="In" isUnique="false">
+                        <elementDefinition Id="15aedc59-af01-49f2-b9c1-7b44eda41cc6" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="fb1af484-bc41-4306-b5f5-e09bd98cbd4e" name="OutputSystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="88159a9d-ccd5-42d9-826a-6ef4bee66b55" />
+              <targetEnds>
+                <association Id="0c5a466d-8304-45ce-b5af-106ba7310f8a" isDerived="false" sourceEndRoleName="OutputSystem" targetEndRoleName="IOutputField" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="ad2329fb-ec9d-4009-8d0b-45c86d6ff1eb" LastKnownName="IOutputField" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="8d80be64-2f64-4892-842b-22e08dde2da3" name="OutputSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="1630b7f9-faf6-4075-a71e-fa37fddcf41b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="6de12777-72a0-4757-83e8-60d2c74a8727" name="IOutputField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="0d9bdf64-4f8f-48d7-9a0c-1c34c7f1ca42" name="Lower" value="n">
+                            <elementDefinition Id="b34c0ff3-cc3b-456a-bba4-8aa409562b4d" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="daf95e2f-d0a3-448d-928b-c0234167c5bd" name="Upper" value="n">
+                            <elementDefinition Id="5d6fadfd-7c54-4879-8fcd-3225341e8d03" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="c642e49e-93a6-4818-92c3-6c42c6037b46" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="3e5ac522-79fe-4976-8df1-a831a48ea79d" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="f21446ef-5c25-47a0-8e47-f6bfe0e05e00" name="OutputFieldList" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5001970d-fc86-4dd9-a2d2-783b73b6faf0" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="469084ff-4bbb-4a3c-880c-327a9af1e7d4" name="Add" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4c478653-5864-44d5-acdd-e1196d040232" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="723d5456-8ab4-4cb6-96b6-8e3dbd8a4db3" name="IOutputField" direction="In" isUnique="false">
+                        <elementDefinition Id="41d64fc9-3d84-49e4-9e0c-68f5400c55b7" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="17c33771-a059-4f4b-a3df-ac3e4b25b7e5" name="Clear" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cceecc07-bace-422f-9db7-5cd5e8e10354" />
+                </operation>
+                <operation Id="458dd6bb-b64f-40da-8c40-09853ece07c7" name="Remove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0e8845e6-607b-476f-8e3b-2b4285ca0fb1" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bed9138c-8065-4e9d-9f02-f1a2bf97f6e1" name="IOutputItem" direction="In" isUnique="false">
+                        <elementDefinition Id="21b1837c-b5d1-4d79-8ebc-dd86e97582a3" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="69769be7-e4d2-4b89-a737-e2f2ac36d766" name="Write" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f85a7e0a-263d-453b-9b75-4287b1508ff5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c7a5f0cc-4646-4ecc-98e5-f78db94625d9" name="buffer" direction="In" isUnique="false">
+                        <elementDefinition Id="851e13a1-34e9-4381-b7ef-f9a86dcef825" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="dce0fe01-2b01-49c5-9b63-60e0429194eb" name="IInputSystem" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="d2ada2a1-7ae8-4c2a-bc1c-3bc36d11d70f" />
+              <ownedOperations>
+                <operation Id="1a753caa-2ec7-442e-90e4-f813b47d0dc2" name="Get" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="141f456c-e390-4ea8-acff-63805138057e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3a87b00e-d992-4ddb-83bc-c1995c16a725" direction="Return">
+                        <elementDefinition Id="bfc70b77-12f0-445b-a284-5ace0495b69d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="cdb2ecd2-3871-42cd-986e-ad83c977140a" LastKnownName="UnlimitedNatural" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="41d66391-f974-49cc-b88e-30014f042ad6" name="Write" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8d33ec23-46dc-48f0-8024-dbe0a1bfb5f2" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c0669538-ca14-4bce-8cd9-ee188a20f27b" name="LearningMachine" isAbstract="true" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2272161c-c08e-437e-a215-b3be4c9cf785" />
+              <suppliersInternal>
+                <dependency Id="4f82d6f0-8ce0-4e61-bb03-20490bf897d6">
+                  <interfaceMoniker Id="90ea0140-ff2e-4613-8508-fab02e50663f" LastKnownName="IMemoryOrganisation" />
+                  <elementDefinition Id="04ba1bf5-72c7-482a-ae81-77f734a4c2dc" />
+                </dependency>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="3eab6eb7-e426-4e93-86b5-3413e0f88f2a" isDerived="false" sourceEndRoleName="LearningMachine" targetEndRoleName="OutputSystem" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="fb1af484-bc41-4306-b5f5-e09bd98cbd4e" LastKnownName="OutputSystem" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="840ddcfa-e913-4cc5-bf4b-4cc481dbf061" name="LearningMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="5a583d4f-084c-43a5-a811-3fddc62658e9" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="8f05ed59-db10-4d58-90ac-9ba8903313de" name="OutputSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="4171ab91-f339-42ff-b040-d6170c37e441" name="Lower" value="2">
+                            <elementDefinition Id="06d9eddd-0900-402d-86e8-319a53b83789" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="89a7628c-0ca3-4825-902f-83c96ee0a93a" name="Upper" value="2">
+                            <elementDefinition Id="f72f2c2a-76dc-4058-bb9a-f12968523752" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="d9e117f0-d7e5-4797-b0db-0731f383f9ce" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="56cc5d6b-db17-4cfd-910e-0c7a66ccbcad" />
+                </association>
+                <association Id="9f1a511a-0da1-41e5-9546-55b3dd49b1a4" isDerived="false" sourceEndRoleName="LearningMachine" targetEndRoleName="IInputSystem" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="dce0fe01-2b01-49c5-9b63-60e0429194eb" LastKnownName="IInputSystem" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="582f0e3b-ec60-4ef9-ab93-1a5eabbdb5de" name="LearningMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="0f5548ff-22d3-4dfb-8e83-db061b8e97ef" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="dc808f0d-0dea-4d1f-b0f3-2c41fe04c3e0" name="IInputSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="e10b62b1-ce2e-4f2c-9b00-3642a88905a4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="cf978845-d805-4d9e-8422-fe7c55067d05" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="66e688b4-1a6d-4513-920f-715e734a5396" name="ErrorStream" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="88674c50-6ad7-46b1-a4f5-40d83c02dc24" />
+                </property>
+                <property Id="ea754620-c039-465f-8bfa-65e2715194da" name="InputStream" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2f224563-676c-44b8-957f-a3aadbd0bf14" />
+                </property>
+                <property Id="5ca6a314-a7ee-49af-a047-8347d6200918" name="OutputStream" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d59b37ef-47e3-4ab3-9185-1eb841969a8c" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="028ded73-e98e-4d62-95bf-c9dc857974d0" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="16e8b023-0d39-49f1-bd6f-a2d62340a93a" />
+                </operation>
+                <operation Id="9d0446d5-95f0-43b6-ae2f-5094924c3248" name="Fill" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e420a16f-7750-4670-a037-683cdee9a9a0" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="92646664-1598-4cfe-a05a-54917c5d6ab3" name="program" direction="In" isUnique="false">
+                        <elementDefinition Id="b19914ea-9315-44c8-9380-9b8de31716b7" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="de633ff6-f648-4cc0-9a9d-ebdda9e039b1" name="GetMemorySection" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="054ed9f3-0815-42f3-8ef4-80802d081c67" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="77053b9c-c4d5-4b5b-a0c3-d8ae15b86c05" direction="Return">
+                        <elementDefinition Id="a635d8db-2972-44d8-b686-cbbbd7d0fb48" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="39d2e0fa-6ca0-4966-98cf-86ef7a1a90b9" LastKnownName="IMemoryOrganisation" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="90ea0140-ff2e-4613-8508-fab02e50663f" name="IMemoryOrganisation" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="694c0858-70a0-4d82-bf9f-9a6ce6c3f75f" />
+              <ownedOperations>
+                <operation Id="2e883429-e6c6-4735-aa04-59d9f37d6fd5" name="GetAddressValue" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fb15dbc9-7e9b-4020-9e8d-d0281e9ef45f" />
+                </operation>
+                <operation Id="da2f1c45-aa56-455b-aec1-d47f9ae9f94a" name="GetWholeMemory" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="70ddf8b9-db20-436b-8b1a-f53adf8b2280" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="be364cb3-e944-4fe6-a326-38fed19018b4" name="LmInterpreter" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6d8eef3e-8f3b-4781-a2b3-4e614b06a1e3" />
+              <targetEnds>
+                <association Id="e455a6be-f721-437a-a715-110b4d995a79" isDerived="false" sourceEndRoleName="LmInterpreter" targetEndRoleName="IParser" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="5e2d0f34-1d3b-4eda-9a14-e9499765f7c2" LastKnownName="IParser" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="d197fdce-13c7-4aec-9045-d8854b69dc69" name="LmInterpreter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="c19d6af5-b339-4216-a861-e66d3d61883b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="de41da22-b903-49c9-a591-665e5164bae2" name="IParser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="cf575d65-b49e-4748-8693-8cc20de82fce" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="15c16424-2dd1-4a56-b8ff-8eb1deaef294" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="754630fb-6b87-4b45-93f9-bec39584b1f1" name="learningMachine" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ad8ae8e9-92bd-4041-b40c-a4673ffc4887" />
+                </property>
+                <property Id="d9de11a7-19aa-4def-8d94-8bdc1766c333" name="parser" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="88bfc888-eacd-446e-9c60-406bb7c1ef46" />
+                </property>
+                <property Id="f585058a-41fb-42cc-96d1-73bdab03e6ef" name="program" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8f5dbe18-f1fe-4f48-857c-9b80d2f69690" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="7d832368-221c-495e-9d55-5d72e004481f" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="361fb563-97e7-4a55-92db-09df359659e8" />
+                </operation>
+                <operation Id="0a422325-b2ad-49dd-9d05-0fa73b1ccbc9" name="Read" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5d49fa2b-eed0-4e3f-a0a2-209dc9af6891" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="80de48c3-eb8b-46cb-928e-81dea672c7bd" name="program" direction="In">
+                        <elementDefinition Id="ac80e93a-4f65-4981-9f48-b42db7b739b5" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="5e2d0f34-1d3b-4eda-9a14-e9499765f7c2" name="IParser" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="51004e83-9823-41e6-a081-4256c75b2d78" />
+              <ownedOperations>
+                <operation Id="1ff4aa96-5f1c-4c8b-81ea-387c3dd8ac66" name="Parse" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="66ffcabb-5192-413f-a7eb-1dcf08530e0e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1928b7a6-0506-4753-9abe-fc6c4059022a" direction="Return">
+                        <elementDefinition Id="df586d64-e132-4737-8b38-4b82dac0d427" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="14e9573e-65d4-40f0-a1e2-dfc3e8a064d8" name="program" direction="In" isUnique="false">
+                        <elementDefinition Id="36f614e7-d49f-455a-866e-70a642d2ded8" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="6ea3062a-9ce8-40bd-af25-5a89bd2fc13e" name="LearningMachineLib">
+              <ownedCommentsInternal>
+                <comment Id="41ca33e0-ff8e-472e-a3bd-84a3e51ae3c7">
+                  <elementDefinition Id="bbffe6fc-3542-4174-99d7-38538d3c2155" />
+                  <body>Фасад. Выполняет анализ программы. Заполняет таблицы полученными из программы данными</body>
+                  <annotatedElements>
+                    <classMoniker Id="c270f9af-5182-4775-b105-2c815f5f13b2" LastKnownName="LmParser" />
+                  </annotatedElements>
+                </comment>
+                <comment Id="fef3d70b-90cf-46d9-945c-beaa8c32f0a5">
+                  <elementDefinition Id="f98116d0-cef1-4529-b1b5-d3ef11370bc8" />
+                  <body>Выполняет анализ лексики программы</body>
+                  <annotatedElements>
+                    <interfaceMoniker Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" LastKnownName="ILexBlock" />
+                  </annotatedElements>
+                </comment>
+                <comment Id="fa5ab858-34f7-485c-8968-44efa37a9171">
+                  <elementDefinition Id="170faf5d-bf3a-4e3c-8750-ce7346686b7f" />
+                  <body>Выполняет анализ синтаксиса программы</body>
+                  <annotatedElements>
+                    <interfaceMoniker Id="24312c06-8a24-46fd-8447-1586e4ee4c68" LastKnownName="ISyntxBlock" />
+                  </annotatedElements>
+                </comment>
+                <comment Id="fedc37d9-7e94-4a2d-bbcf-85e1707778de">
+                  <elementDefinition Id="01a0f4fb-2467-4b2a-b283-366ebf9e0365" />
+                  <body>Очищает программу от лишних пробелов табуляций, а также удаляет комментарии</body>
+                  <annotatedElements>
+                    <classMoniker Id="637c7829-dca1-4530-b1d2-d71c29803c66" LastKnownName="Cleaner" />
+                  </annotatedElements>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="42ef4d1e-b7a4-469a-9d89-4486191bdbf8" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="c270f9af-5182-4775-b105-2c815f5f13b2" name="LmParser" isAbstract="true" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="9e27d360-b498-4740-9b62-a048a49b5037" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="4aecb0b4-02bd-47f8-a956-14f1f6fa0ed4">
+                        <interfaceMoniker Id="5e2d0f34-1d3b-4eda-9a14-e9499765f7c2" LastKnownName="IParser" />
+                        <elementDefinition Id="fdfd24fa-003a-455b-8f6f-db5ee73060e7" />
+                      </interfaceRealization>
+                      <dependency Id="fdae79d0-622f-427e-8153-3d421ea9c9ab">
+                        <interfaceMoniker Id="24312c06-8a24-46fd-8447-1586e4ee4c68" LastKnownName="ISyntxBlock" />
+                        <elementDefinition Id="c9d47145-b8a6-40e4-b3d2-7fe584886edd" />
+                      </dependency>
+                      <dependency Id="7f093c08-e529-409a-9f0d-6eb02a82beee">
+                        <interfaceMoniker Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" LastKnownName="ILexBlock" />
+                        <elementDefinition Id="d87686fa-edbd-451c-a279-090312c8c537" />
+                      </dependency>
+                      <dependency Id="e8eb6ba9-7e6a-45a9-bea8-84ddef6a75a5">
+                        <interfaceMoniker Id="985c2a08-5d0a-4c2d-9f2b-d06d57a5633b" LastKnownName="IProgramCreator" />
+                        <elementDefinition Id="75e87fe7-0b97-4d93-bfb0-7c4efacd97e7" />
+                      </dependency>
+                      <dependency Id="7bd2de0b-75d7-477e-94d4-23cba69533ba">
+                        <classMoniker Id="637c7829-dca1-4530-b1d2-d71c29803c66" LastKnownName="Cleaner" />
+                        <elementDefinition Id="532c10b8-c7f1-44b3-b877-da427622436e" />
+                      </dependency>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="2c5609e3-b735-4a9f-b1cd-1dc3b71b8550" name="CreateProgram" visibility="Private" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="39a7879b-5f52-4568-a9d9-cd7f7d79446a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="f3689351-5cb0-4237-908d-10e699b35557" direction="Return">
+                              <elementDefinition Id="93478132-2151-41fc-9ded-79313cc3801d" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="7c1f23d9-1d02-4cda-9af3-4c04ff7cd3f6" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="a9460b85-bd3b-4311-a9ff-4f56e243d11a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="378f2d46-a950-4fc4-9272-36368fb31734" name="program" direction="In" isUnique="false">
+                              <elementDefinition Id="0e8dfbc0-b735-4cc9-ae5e-35f6f331d708" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="d2341208-9ceb-442e-b683-41eaa1a17575" direction="Return">
+                              <elementDefinition Id="b80210bd-281d-4f5a-8dd2-7e3fa55e4ac1" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="24312c06-8a24-46fd-8447-1586e4ee4c68" name="ISyntxBlock" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="655dd4ef-8ad5-46c1-ad97-2dc72700272d" />
+                    <ownedOperations>
+                      <operation Id="3e4d3921-5ea1-4aa1-ad02-a9bfffdfaf57" name="Parse" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="44c7eefd-96ee-4fba-b60e-e89f2a6c4bc3" />
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" name="ILexBlock" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="3f9d27fb-d6cf-4848-b9db-4e14616d7a96" />
+                    <ownedOperations>
+                      <operation Id="58cbcd5c-545c-4d34-8660-78bf3588bba7" name="Parse" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="7fbf4bc0-fac5-4d3d-a59f-140053b1a0aa" />
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="637c7829-dca1-4530-b1d2-d71c29803c66" name="Cleaner" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="fb908a82-46ed-498a-a6b6-87e74e441276" />
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="ddf0c424-f49c-4db6-b150-0d4a98b49e28" name="ILmCommand" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="570a6c71-99c1-415c-b48c-7366529fb0ac" />
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="ab51a1d2-b258-4923-86f7-996b3024ebf2" name="STDLearningMachine" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="0d860747-ae86-4f51-9afc-4799fc0faf85" />
+                    <generalsInternal>
+                      <generalization Id="b05593ca-a8f0-4c66-847f-b82c35cf83b6" isSubstitutable="false">
+                        <classMoniker Id="c0669538-ca14-4bce-8cd9-ee188a20f27b" LastKnownName="LearningMachine" />
+                        <elementDefinition Id="95826a74-b153-4ba9-acc1-01cf3a5f3372" />
+                      </generalization>
+                    </generalsInternal>
+                    <targetEnds>
+                      <association Id="6d468aeb-9747-4dd2-b008-bec16663b090" isDerived="false" sourceEndRoleName="STDLearningMachine" targetEndRoleName="ILMExecutor" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="56ca07de-f47e-404a-8848-6d6ffa68a092" LastKnownName="ILMExecutor" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="9038b165-db2d-41d0-8d3a-40a285316769" name="STDLearningMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="d84cfeaa-f6c8-446d-869c-bbada6782ecd" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="9a6831b8-715a-4b12-b523-877dd0b9ea83" name="ILMExecutor" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="2d256258-caa5-440e-bf06-e6a47300393d" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="a5b0ab2d-5af2-4a1a-affc-3f2151728a3f" />
+                      </association>
+                      <association Id="1297a357-4221-46d9-b966-f80cb7688537" isDerived="false" sourceEndRoleName="STDLearningMachine" targetEndRoleName="IProgramLoader" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="22b2d8af-63d9-41de-ad4f-59f7bb6ad26a" LastKnownName="IProgramLoader" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="2d9c3405-4802-4634-811a-1702bbc06f75" name="STDLearningMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="132b5bb9-0ad1-42a8-9da9-7c6c0b163e30" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="840cdb3e-b351-4ef9-8ca3-589da91b12b1" name="IProgramLoader" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="bf4b74a1-3e4f-40d7-8e3c-4cb697c25d48" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="b8879858-b747-436c-908c-c61cfa4e8a90" />
+                      </association>
+                    </targetEnds>
+                    <ownedAttributesInternal>
+                      <property Id="e878ef01-ee16-454d-8d11-f1b7ec221b3d" name="currentAddress" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="a47e6b59-dbdd-4fe3-968a-5e8c69d87393" />
+                      </property>
+                      <property Id="145304b9-e117-46af-b884-19e2dd5e6150" name="executor" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="2953b056-fc19-4513-972e-978380805500" />
+                      </property>
+                      <property Id="88b6b637-7043-48b2-a8d0-43d90c8b89a1" name="programLoader" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="8c066793-20bd-4fa6-a8fd-08747267da57" />
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="56ca07de-f47e-404a-8848-6d6ffa68a092" name="ILMExecutor" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="ef2dbfd5-99de-4839-952d-960e96f9895f" />
+                    <suppliersInternal>
+                      <dependency Id="5e16cc61-b404-4b29-a7ca-c89b1402195d">
+                        <interfaceMoniker Id="ddf0c424-f49c-4db6-b150-0d4a98b49e28" LastKnownName="ILmCommand" />
+                        <elementDefinition Id="21878a04-effc-4dc5-ae30-72ae9314ebf7" />
+                      </dependency>
+                    </suppliersInternal>
+                    <ownedOperations>
+                      <operation Id="f4dff74a-7528-41bf-b8d8-87ee42706fde" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="90f63e18-dae6-4317-b0e5-7364b0e36ca2" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c91e352b-69ed-4882-9e6f-91b8fabc9fea" name="command" direction="In">
+                              <elementDefinition Id="54917a21-fd29-47ab-867f-951e04b1636e" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="985c2a08-5d0a-4c2d-9f2b-d06d57a5633b" name="IProgramCreator" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="79315ca4-92b5-45bb-9edf-89afb1d44044" />
+                    <ownedOperations>
+                      <operation Id="a9b0658c-ec2e-40e7-83a0-d777c8ed8c50" name="Create" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="52e40f50-ecbe-4aad-8a04-980c18ab608e" />
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="22b2d8af-63d9-41de-ad4f-59f7bb6ad26a" name="IProgramLoader" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="afd276e3-ea8b-4280-8d23-01037815dda0" />
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" name="IMemoryCell" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="3431c4b5-19bf-4703-9ee5-9390650ac0a0" />
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="85fa6259-7112-4fcc-95f2-e8aa3d605886" name="EmptyCell" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="c9a669a9-486c-4db3-9707-de7da2d96daa" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="ec8fa7f9-65a0-45b6-80a6-7a02deb38a27">
+                        <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                        <elementDefinition Id="15dee76b-8cc4-476d-a66e-3fa081cfc5c1" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="a6fa107f-0c78-47a1-a618-f992c71bbd87" name="Variable" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="09721435-3ee8-41e6-85e2-1b666755b723" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="f5ad313e-bf7e-48ce-a6a9-5a4b9c9edb3e">
+                        <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                        <elementDefinition Id="ac94103c-bc06-495d-8882-2ae36a4d0db9" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="559b6461-9c33-49e2-8e8b-1a6752f90455" name="LmCommand" isAbstract="true" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="5339a2e4-3c18-49f2-8cdf-31b7d5de6859" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="7c3c0c5a-a43b-4d23-a046-6245bb6eecfa">
+                        <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                        <elementDefinition Id="468f0961-5528-460c-9d45-81a4f9296019" />
+                      </interfaceRealization>
+                      <interfaceRealization Id="fbb5fe7a-bf82-4078-af2e-82f610ec81e6">
+                        <interfaceMoniker Id="ddf0c424-f49c-4db6-b150-0d4a98b49e28" LastKnownName="ILmCommand" />
+                        <elementDefinition Id="d1e0237b-c2bc-4cfa-a3dd-ab09b466d987" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedAttributesInternal>
+                      <property Id="e0c17f6d-b43d-4af2-bb1e-ee9668c79ae9" name="cmd" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="f815376b-2064-4c6d-9b4c-71651a0f6dcc" />
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="814a068c-d474-4c02-8f1f-c1b467c40ca5" name="LearningMachineLibRM">
+                    <elementDefinition Id="6dc35781-8648-4a1b-962f-c5f3ff362fb6" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <class Id="cd41bc1a-7f84-4368-84d0-b6e026b2cebf" name="LearningMachineRM" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="08e56547-ae70-482d-9404-369262943bbb" />
+                          <suppliersInternal>
+                            <dependency Id="d3ec36f1-410a-4246-8673-c0f7e9842400">
+                              <classMoniker Id="402e3e96-d7e9-4793-898f-7bdf87541f7a" LastKnownName="LMRMMemoryFiller" />
+                              <elementDefinition Id="846fc74a-e1f2-4f05-a9ec-df1286026d67" />
+                            </dependency>
+                          </suppliersInternal>
+                          <generalsInternal>
+                            <generalization Id="675cbb79-1a0a-4c5e-90d3-53c7c4fee6cf" isSubstitutable="false">
+                              <classMoniker Id="ab51a1d2-b258-4923-86f7-996b3024ebf2" LastKnownName="STDLearningMachine" />
+                              <elementDefinition Id="f2b1a840-1b6f-4acf-ac7f-2ad5b1c32e8c" />
+                            </generalization>
+                          </generalsInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="9e94253a-40ec-47ea-bcd1-bccbaabcd92c" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="c20f044a-4f68-40b7-a163-4cc479fa1b9c" />
+                            </operation>
+                            <operation Id="329be64c-2f3c-4e2e-9421-722cd6ce1935" name="Fill" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="da48d1c6-52a7-40ec-969e-1c79200a8cee" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="5606e5cc-ea11-4336-9d23-14cb064de07d" name="program" direction="In" isUnique="false">
+                                    <elementDefinition Id="1aff7a9a-798b-445e-9d29-c53d909b6816" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                            <operation Id="b1aa2352-e362-4743-8366-6982f24c27ca" name="GetMemorySection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="4dc81375-8ab3-4104-8a71-2ee6886170c5" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="25e80a4d-5fd4-4939-ada3-023f3d46b45f" direction="Return">
+                                    <elementDefinition Id="4aee78ac-c95b-413b-9d56-4e17a1db51da" />
+                                    <type_NamedElement>
+                                      <referencedTypeMoniker Id="39d2e0fa-6ca0-4966-98cf-86ef7a1a90b9" LastKnownName="IMemoryOrganisation" />
+                                    </type_NamedElement>
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="3fe9b854-354b-458e-9c2c-a862fba71eaf" name="LmRMMemory" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="37a16b4f-8f2b-40ec-b547-b41db3043d1e" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="dcb669b0-5772-4ba5-9351-c4328c126dc4">
+                              <interfaceMoniker Id="90ea0140-ff2e-4613-8508-fab02e50663f" LastKnownName="IMemoryOrganisation" />
+                              <elementDefinition Id="d4a96024-b6f7-45c5-a7c6-b7cbfe15676e" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <targetEnds>
+                            <association Id="ceec1971-16f6-4063-84d0-21164a6cb569" isDerived="false" sourceEndRoleName="LmRMMemory" targetEndRoleName="Register" isLeaf="false" isAbstract="false">
+                              <classMoniker Id="bd84b7fc-6641-43fe-893a-d74ec5d94cab" LastKnownName="Register" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="23245773-28ac-4673-acc9-af708d371110" name="LmRMMemory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="321b560d-8dfc-456f-b5f0-b0ea8030211c" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="a1924df1-3c60-45ca-9078-6c5f42db2aea" name="Register" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <lowerValueInternal>
+                                      <literalString Id="bb5cb4d6-894d-4de9-88be-20570bba7fd1" name="Lower" value="13">
+                                        <elementDefinition Id="0a0833a2-8ec9-490f-b3c2-fffe6cc43ed0" />
+                                      </literalString>
+                                    </lowerValueInternal>
+                                    <upperValueInternal>
+                                      <literalString Id="9fcc958e-0321-4bcc-b89e-af533cd168e4" name="Upper" value="13">
+                                        <elementDefinition Id="57b949f0-6927-4dfb-be76-034dc4290ed8" />
+                                      </literalString>
+                                    </upperValueInternal>
+                                    <elementDefinition Id="6300b0d0-8f92-45f9-be43-5b37bad54404" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="33388f6f-5436-44ed-8d30-8a416d792d88" />
+                            </association>
+                            <association Id="b580621c-81cf-4a39-a72e-d023a9f033c7" isDerived="false" sourceEndRoleName="LmRMMemory" targetEndRoleName="IMemoryCell" isLeaf="false" isAbstract="false">
+                              <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="d87bfa9f-9bf5-4715-bbf6-34fcbc04f905" name="LmRMMemory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="71ef2848-28d6-40a8-a809-cac8a92bf41f" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="a762ee1c-a9b6-41ac-985f-9ca014b57524" name="IMemoryCell" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <lowerValueInternal>
+                                      <literalString Id="7739135d-b306-444f-83ec-451e44c3b0f3" name="Lower" value="n">
+                                        <elementDefinition Id="ea63a640-e5ad-4ad7-b96f-9b8e1282e72a" />
+                                      </literalString>
+                                    </lowerValueInternal>
+                                    <upperValueInternal>
+                                      <literalString Id="2b81cf66-3003-43c1-bd2d-07d01b837d29" name="Upper" value="n">
+                                        <elementDefinition Id="e0015c5c-2323-41ea-a0aa-c32861e72425" />
+                                      </literalString>
+                                    </upperValueInternal>
+                                    <elementDefinition Id="c63cc987-9ed3-45f5-af3e-265f2ab7c3f9" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="2db07748-efeb-486b-982f-7b1da0050206" />
+                            </association>
+                          </targetEnds>
+                          <ownedAttributesInternal>
+                            <property Id="12bc703d-15a4-4dbc-b1cd-911551b59ecf" name="MemoryCellList" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="b4ccab0b-ca73-44b6-8438-6b0d5af67d43" />
+                            </property>
+                            <property Id="e24fb7b4-3990-495b-b83b-ac0ded85a83e" name="Registers" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="c1ff966c-3ca8-4f4d-8bb3-8592f63934e9" />
+                            </property>
+                          </ownedAttributesInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="8de54cf1-cbc0-4a7c-9ad3-1cdbc09e38f2" name="GetAddressValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="7f2cad0c-102e-4705-bfda-f245b8e61f79" />
+                            </operation>
+                            <operation Id="ccc5c216-852a-46a1-a1b7-e1f381f6f49b" name="GetWholeMemory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="c3f05c70-49ee-41c1-9bc7-5b5eabb3e832" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="402e3e96-d7e9-4793-898f-7bdf87541f7a" name="LMRMMemoryFiller" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="9a0e92c2-399f-44e8-ab2d-9f30d589a1ba" />
+                          <suppliersInternal>
+                            <dependency Id="bb6c5929-5d19-4ce5-bab1-0147e2d2bc52">
+                              <classMoniker Id="3fe9b854-354b-458e-9c2c-a862fba71eaf" LastKnownName="LmRMMemory" />
+                              <elementDefinition Id="e28d33a7-3c78-461b-9df2-6c7ba67cbe70" />
+                            </dependency>
+                            <dependency Id="b9adcc4d-4c96-46f7-aefe-cb1909a27f1a">
+                              <classMoniker Id="4c198056-0e83-4ea5-ae4f-65d53ec0241e" LastKnownName="LMRMProgramXMLLoader" />
+                              <elementDefinition Id="3a171ed1-003d-4c72-812e-ea8371f4517a" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="bd84b7fc-6641-43fe-893a-d74ec5d94cab" name="Register" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="f201093e-1706-4567-86ad-a361a75c5afb" />
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="30e4a1d5-9f6d-410c-8daa-e1b95160a4b4" name="LmRMParser" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="5b28aca6-b87e-4e5d-b378-98902b0928e6" />
+                          <generalsInternal>
+                            <generalization Id="eac4ef8a-d0e3-4044-9e5b-a7ef8a606747" isSubstitutable="false">
+                              <classMoniker Id="c270f9af-5182-4775-b105-2c815f5f13b2" LastKnownName="LmParser" />
+                              <elementDefinition Id="f5e8c4a2-be82-40be-af24-5e107dfe478a" />
+                            </generalization>
+                          </generalsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="4c198056-0e83-4ea5-ae4f-65d53ec0241e" name="LMRMProgramXMLLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="03657283-18a2-43c0-8f51-3cb3aa2f65b8" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="cdb9802f-7cef-4d4c-8735-a7c392120655">
+                              <interfaceMoniker Id="22b2d8af-63d9-41de-ad4f-59f7bb6ad26a" LastKnownName="IProgramLoader" />
+                              <elementDefinition Id="259c56bf-a2d8-482e-afad-83ee89113b7e" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="ac9d307e-5517-41ce-9284-02fb404d48ad" name="LMRMProgramXMLCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="6e0d4e9b-2a21-4791-b8da-901c6dc052fd" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="7e4b76f6-1525-4714-a5dc-54ac9b8b99a0">
+                              <interfaceMoniker Id="985c2a08-5d0a-4c2d-9f2b-d06d57a5633b" LastKnownName="IProgramCreator" />
+                              <elementDefinition Id="24ddbb82-64d4-47b9-aaf0-3d33d8a2410f" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="763433b6-f00a-4ae6-a7f6-0bba86163ebc" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="932fb9b7-c3c1-4a10-9e4e-453de4641505" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="58c05ef6-3296-408a-bb33-0eff1519c443" name="LmRMSyntaxBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="78972c32-7f32-49ab-9466-36e1c52ad9a9" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="2eaa0525-3b61-42c6-8d9e-6b806f2d4d5f">
+                              <interfaceMoniker Id="24312c06-8a24-46fd-8447-1586e4ee4c68" LastKnownName="ISyntxBlock" />
+                              <elementDefinition Id="81c1c5fa-2cd6-485b-a15d-825aa37aa8bb" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="d353a85d-aebd-49c8-91f7-055c65cd3343" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="26dee390-43d7-48ec-8ed4-ffae7e037bf2" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="1cacdab0-4c27-485a-9eee-8aa32e162a6f" name="LMRMExecutor" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="b6e708ac-642b-41ab-8088-1563e804f991" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="7ddc29ed-548b-42b3-87f3-50b39849397e">
+                              <interfaceMoniker Id="56ca07de-f47e-404a-8848-6d6ffa68a092" LastKnownName="ILMExecutor" />
+                              <elementDefinition Id="9044a591-5790-4559-948d-7604e5bddba4" />
+                            </interfaceRealization>
+                            <dependency Id="69bcff4c-d1e7-4867-8a1b-83ae7cc9429d">
+                              <classMoniker Id="1de2c1ea-a606-4a3c-ad0a-44ee3457e446" LastKnownName="ACommands" />
+                              <elementDefinition Id="48cf79c7-5a16-4875-a596-d30d628bdaa3" />
+                            </dependency>
+                            <dependency Id="c916ec75-5daa-40c4-bbe6-f1b0f46467c7">
+                              <classMoniker Id="d89a4f1a-6e69-4787-8e21-073790a7b2f8" LastKnownName="LCommands" />
+                              <elementDefinition Id="236abd0f-c752-4e6a-af2c-268a9f20e835" />
+                            </dependency>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="2381274e-e535-4f30-a02b-97290d00e5bb" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="af3650c1-b3f6-485a-83d8-de6b7c32889d" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="90a84346-0f98-472e-9830-aa32f3bb610f" name="command" direction="In">
+                                    <elementDefinition Id="ac0ac510-7e5f-40df-bb43-c2981df802bb" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="e3e2bb45-da35-4229-9ca2-83a1aa9402fa" name="LmRMLexBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="93714776-762b-4e6d-816b-340f4dada1b2" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="4e109f11-c8cd-4277-95ed-7185510cf111">
+                              <interfaceMoniker Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" LastKnownName="ILexBlock" />
+                              <elementDefinition Id="32a0c59c-b74b-4973-9acd-b17e4e9cbfd3" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="df190f24-4fae-47f7-a5d3-126b42bd2f6e" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="97caee00-048d-4211-974b-9faba0f30719" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="1de2c1ea-a606-4a3c-ad0a-44ee3457e446" name="ACommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="dc6e19c0-b6c3-47cf-80eb-df8638d04b55" />
+                          <ownedOperationsInternal>
+                            <operation Id="893ffbda-75c0-495a-854b-bfc520110e52" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="2bf33d62-e215-4987-96a2-f51e38bcce87" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="d89a4f1a-6e69-4787-8e21-073790a7b2f8" name="LCommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="9c00e585-58af-4505-9726-86b40d31ff0c" />
+                          <ownedOperationsInternal>
+                            <operation Id="56f45138-9d1e-433d-bd72-04244ed002db" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="0e9707e3-727e-406a-abe7-f44b9fdb760a" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="6d239e25-6288-4d1e-a6ad-eee1dfd2d1cf" name="LmRMShortCommand" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="fc9f1fa4-b4c0-45f9-a21a-bb44bd2cdbe0" />
+                          <generalsInternal>
+                            <generalization Id="4a24f1da-cb18-4a52-9fd2-b785d3f3a8c0" isSubstitutable="false">
+                              <classMoniker Id="559b6461-9c33-49e2-8e8b-1a6752f90455" LastKnownName="LmCommand" />
+                              <elementDefinition Id="8893bd0a-0480-468c-bb2e-c4d954f5717d" />
+                            </generalization>
+                          </generalsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="757e9f7c-3c59-404e-b5c6-b7b105b253a2" name="LmRMLongCommand" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="8f8e589b-605a-480e-b194-ad1ca16d2cfc" />
+                          <generalsInternal>
+                            <generalization Id="d981913a-bda3-4a9e-92a0-3e5f84629d2f" isSubstitutable="false">
+                              <classMoniker Id="559b6461-9c33-49e2-8e8b-1a6752f90455" LastKnownName="LmCommand" />
+                              <elementDefinition Id="47467531-2ca9-4d69-8d3f-e852e276f4cd" />
+                            </generalization>
+                          </generalsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="9bd22710-5e4a-4f60-b524-ea967c3cd908" name="UsedCell" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="429a6323-ff33-4761-b9e6-12d58464b58e" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="3a9cbf31-a6f4-4f18-899e-1b6f75cab257">
+                              <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                              <elementDefinition Id="c1a26e6c-b1f1-41cf-9187-945a3f184b41" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="6bb0ea58-0a51-491f-8484-b0a4311d2eb8" name="LearningMachineLib3">
+                    <elementDefinition Id="91d9aed6-a53c-4ffa-b5cc-1b701217ee28" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <class Id="553fca9f-cc68-4e5e-a4d9-02657386ccf7" name="Lm3Parser" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="277fdbf4-e38a-4d70-b1af-5e5a929cf337" />
+                          <generalsInternal>
+                            <generalization Id="d9d2db97-76ce-4c7c-9a38-4cbc0f7909d0" isSubstitutable="false">
+                              <classMoniker Id="c270f9af-5182-4775-b105-2c815f5f13b2" LastKnownName="LmParser" />
+                              <elementDefinition Id="1ef248d3-a254-4b26-bbfa-0e9a33810ebb" />
+                            </generalization>
+                          </generalsInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="13cb72c1-49b0-4458-9c19-b54050d5d8ca" name="CreateProgram" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="f32c628e-9f34-4cf1-b483-e809f690a120" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="2469ef33-0ade-4192-93e4-acc5cfc393a5" direction="Return">
+                                    <elementDefinition Id="d9d255c8-ae25-4db3-a2fc-f0e86dbba1f1" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="788c54ea-233c-406f-8500-eaaa300b3e2e" name="Lm3LexBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="6a0eea86-737e-4cb9-a3ee-2f69aaf4223f" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="835dc29f-c5ea-4295-bb98-ff4268be2760">
+                              <interfaceMoniker Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" LastKnownName="ILexBlock" />
+                              <elementDefinition Id="b2464369-a557-47a5-8fb4-3c2dcc01bc47" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="3125d908-c813-4469-9d95-5fadd40ddd64" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="4984829d-5ad9-4f55-b2f4-d6643a534689" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="719d4024-f936-42ed-b2a5-d8b1990a3d23" name="Lm3SyntaxBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="c8de7b1e-528a-49ea-afb4-18019db2dd78" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="df6d6013-a181-488f-a24a-03a9ecfa65e5">
+                              <interfaceMoniker Id="24312c06-8a24-46fd-8447-1586e4ee4c68" LastKnownName="ISyntxBlock" />
+                              <elementDefinition Id="47cabc04-bca4-49f5-843a-d55da8e37e25" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="bb12bffa-15f4-4fc8-9c4a-2c7b4998ec58" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="7075da26-d1d8-468b-afc7-238a42c72171" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="015df6bb-1ecb-4c06-b888-f23732b8cf94" name="LearningMachine3" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="b88adb41-81f4-4e02-b960-94f0028935dc" />
+                          <suppliersInternal>
+                            <dependency Id="7a4c600a-57cc-4dc3-9947-8d7022e7aa74">
+                              <classMoniker Id="256b0e09-32cd-4a30-9604-f5c9dbdb5de4" LastKnownName="LM3MemoryFiller" />
+                              <elementDefinition Id="7531c2ce-1841-42bb-9fe1-956b09841e7b" />
+                            </dependency>
+                          </suppliersInternal>
+                          <generalsInternal>
+                            <generalization Id="f139e23d-bbc1-4dd8-ada4-a9f7071420f2" isSubstitutable="false">
+                              <classMoniker Id="ab51a1d2-b258-4923-86f7-996b3024ebf2" LastKnownName="STDLearningMachine" />
+                              <elementDefinition Id="608b0e06-7f13-459c-b346-e9f470380726" />
+                            </generalization>
+                          </generalsInternal>
+                          <targetEnds>
+                            <association Id="86c9b116-723b-409e-b9af-df9fe5f510ee" isDerived="false" sourceEndRoleName="LearningMachine3" targetEndRoleName="Memory" isLeaf="false" isAbstract="false">
+                              <classMoniker Id="c09e0366-f893-4fc6-b96b-063a67deee3d" LastKnownName="Lm3Memory" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="fdff138e-7f38-4e28-9aa0-a09b29d0bc40" name="LearningMachine3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="e77871eb-35a6-4d5f-9cc3-72423ca15655" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="5683d4ab-37df-44b3-bb20-30c3da6453fd" name="Memory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <elementDefinition Id="4b6a054c-5dc8-4f4f-9ace-9e4c1160e8c5" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="b2837c10-44fd-444a-b9a8-86908098fe36" />
+                            </association>
+                          </targetEnds>
+                          <ownedAttributesInternal>
+                            <property Id="4ec19f90-1f98-425f-a7ae-7f87e115cbbf" name="memory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="809f7632-42fb-4e5f-a71c-94530a741629" />
+                            </property>
+                          </ownedAttributesInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="ba47cae6-9cd1-44af-89bc-a9607b7e0adc" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="8dd8b998-0605-4842-bdaa-43235953cbf8" />
+                            </operation>
+                            <operation Id="4b6c5374-b1dc-4cc0-98a2-eeea73853d98" name="Fill" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="8ab7b242-9835-42b7-9088-3029f7322fe6" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="63990316-5ba2-46f8-8bb9-1c21746c3646" name="program" direction="In" isUnique="false">
+                                    <elementDefinition Id="b0f86770-90d8-45bc-b5d9-86c0f8efb948" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                            <operation Id="e03a3387-1153-4183-8411-2d77324b0fed" name="GetMemorySection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="8793467c-93b2-410d-a86c-515666ab63bf" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="a54e8004-ec37-4e1c-b937-48b0ec8ca856" direction="Return">
+                                    <elementDefinition Id="c8162b26-1a46-4661-be17-e8223cf5b987" />
+                                    <type_NamedElement>
+                                      <referencedTypeMoniker Id="39d2e0fa-6ca0-4966-98cf-86ef7a1a90b9" LastKnownName="IMemoryOrganisation" />
+                                    </type_NamedElement>
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="5bc0de5a-3b62-4eda-8392-5def051d1209" name="LM3Executor" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="ccd146a2-311d-41d3-bdcc-84a8b08b3c32" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="59e52c6f-f2ec-41f1-82a6-fd4c87ee839f">
+                              <interfaceMoniker Id="56ca07de-f47e-404a-8848-6d6ffa68a092" LastKnownName="ILMExecutor" />
+                              <elementDefinition Id="f2e1e903-91ba-474c-938c-212e1c5c434d" />
+                            </interfaceRealization>
+                            <dependency Id="c6ea8722-8d77-49da-a02f-8af0bc9fb55d">
+                              <classMoniker Id="9bda3b8f-041b-44cd-89c0-35606d8ab83e" LastKnownName="ACommands" />
+                              <elementDefinition Id="b8e0dcbf-1c9e-4709-854b-26418db32bfa" />
+                            </dependency>
+                            <dependency Id="43e192d5-b133-4266-80e5-7451a52d786a">
+                              <classMoniker Id="0063d3e1-72cf-4d01-be34-d5c7f58a7956" LastKnownName="LCommands" />
+                              <elementDefinition Id="28181a88-8739-49c7-bbe2-1c462ae07b35" />
+                            </dependency>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="32057ba2-ac72-4d02-a218-704e7c9312ea" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="e7339b80-06be-4e5b-9794-717a8a9cb2f4" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="6343df0d-a259-4912-b21b-c8e0ff38d0c8" name="command" direction="In">
+                                    <elementDefinition Id="60532a82-a882-4830-a916-df46fae4459d" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="a0a02910-56b5-4c63-8ea8-eebc549703e7" name="Lm3Command" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="cc3471dd-c9ae-4f78-9fe4-9f9ffa09f04f" />
+                          <generalsInternal>
+                            <generalization Id="981dd445-2fce-4f7a-b8f4-776e5f5d3dd3" isSubstitutable="false">
+                              <classMoniker Id="559b6461-9c33-49e2-8e8b-1a6752f90455" LastKnownName="LmCommand" />
+                              <elementDefinition Id="64a9330e-5194-47d6-8dc6-c8df0ea6136b" />
+                            </generalization>
+                          </generalsInternal>
+                          <ownedAttributesInternal>
+                            <property Id="3f7c8275-88f5-46c0-b6cc-9e5008636c82" name="A1" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="028d5c12-f5ca-4274-8f43-cbf5aabba130" />
+                            </property>
+                            <property Id="38bb4db9-7422-4e53-9c7a-974e0b71c07e" name="A2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="08480f67-f9e2-49c5-8304-a3e19ae1cb21" />
+                            </property>
+                            <property Id="5a2ea229-96fc-4bae-94b5-b875cca09027" name="A3" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="4eb18447-c78f-4877-9502-468edbedc4c2" />
+                            </property>
+                          </ownedAttributesInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="9bda3b8f-041b-44cd-89c0-35606d8ab83e" name="ACommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="95773532-34a6-4649-bcad-4caad45c37b5" />
+                          <ownedOperationsInternal>
+                            <operation Id="ae04dd8a-a36c-4a92-88d7-fee5e170ca79" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="686c6e1c-16d3-4615-a014-716256382691" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="0063d3e1-72cf-4d01-be34-d5c7f58a7956" name="LCommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="2ae1815b-ac27-4733-8548-65cc5f87fde6" />
+                          <ownedOperationsInternal>
+                            <operation Id="c5846de2-4d7d-41df-91c2-28394a924688" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="2079773d-5835-485b-ba10-0ff07fe24b10" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="2fe11a8d-c1b0-4247-92e2-82782758b906" name="LM3ProgramXMLCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="f91f48c3-c1c5-49b1-89cc-2b754e867bf5" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="3e72b7ef-551e-4e46-9261-0ba107b61085">
+                              <interfaceMoniker Id="985c2a08-5d0a-4c2d-9f2b-d06d57a5633b" LastKnownName="IProgramCreator" />
+                              <elementDefinition Id="203a408d-3155-4f5d-9eab-41c6da051d56" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="ee9094f9-c8b3-4030-b070-7593287ce8fa" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="a688ce6d-7069-4dc0-b910-8e8cbcebf418" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="99aee4f2-240f-40e7-b9a1-9c19e45efe0f" name="LM3ProgramXMLLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="9d109594-fa65-4da9-9f6b-664e49bbef3f" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="9d0dadf9-458e-4c42-99e7-b859d151fa75">
+                              <interfaceMoniker Id="22b2d8af-63d9-41de-ad4f-59f7bb6ad26a" LastKnownName="IProgramLoader" />
+                              <elementDefinition Id="5ea52c29-b56e-44f8-b2a3-e20850df0ab3" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="c09e0366-f893-4fc6-b96b-063a67deee3d" name="Lm3Memory" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="861ffc85-85b0-4e88-92c7-c2f25ee0d5ce" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="79806b4a-3e8d-4f92-916b-17acdd154f79">
+                              <interfaceMoniker Id="90ea0140-ff2e-4613-8508-fab02e50663f" LastKnownName="IMemoryOrganisation" />
+                              <elementDefinition Id="2560166f-5931-4679-9d6d-ff4f747e14e3" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <targetEnds>
+                            <association Id="13590f84-fbf9-4a8f-bcbd-8002676cc970" isDerived="false" sourceEndRoleName="Memory" targetEndRoleName="IMemoryCell" isLeaf="false" isAbstract="false">
+                              <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="83fb48fa-c989-4ba6-b74b-44741c45b57b" name="Memory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="990babff-7846-4248-aade-0a44dc3bc601" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="201de784-77cc-4f43-8f9a-cb9690398ec6" name="IMemoryCell" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <lowerValueInternal>
+                                      <literalString Id="c5cc0c14-8e35-4a1f-b750-c9ada2056fda" name="Lower" value="n">
+                                        <elementDefinition Id="17532099-f02c-4705-ad82-0a95aa03a9c2" />
+                                      </literalString>
+                                    </lowerValueInternal>
+                                    <upperValueInternal>
+                                      <literalString Id="c5765d30-bf6d-4c57-ac32-a93d626b2d20" name="Upper" value="n">
+                                        <elementDefinition Id="85f7082d-85be-4f04-981a-828676cc8cc1" />
+                                      </literalString>
+                                    </upperValueInternal>
+                                    <elementDefinition Id="ef9063b9-bf6f-4e88-8b97-19db936c0da9" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="0efc7f30-c81f-4107-bbf2-a7ad33088508" />
+                            </association>
+                          </targetEnds>
+                          <ownedAttributesInternal>
+                            <property Id="c1889c3a-7732-41fa-8f8f-51e978c1f5aa" name="MemoryCellList" visibility="Private" isLeaf="true" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="b4cea916-8f6e-4e2a-abae-185d465a0f0a" />
+                            </property>
+                          </ownedAttributesInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="00ed2a24-1e7b-445c-8207-33f8a6792405" name="GetAddressValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="ae59ed09-7f01-474b-9371-f560706468a9" />
+                            </operation>
+                            <operation Id="d3651cc8-9a2c-4565-93ba-85c94e78fab4" name="GetWholeMemory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="e7bc3192-743e-4f70-8399-d45e58e2411b" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="256b0e09-32cd-4a30-9604-f5c9dbdb5de4" name="LM3MemoryFiller" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="32a72d7f-298b-48b4-aa3b-4f8784f25a15" />
+                          <suppliersInternal>
+                            <dependency Id="a1035719-b74a-40f4-baeb-4727e12d3507">
+                              <classMoniker Id="99aee4f2-240f-40e7-b9a1-9c19e45efe0f" LastKnownName="LM3ProgramXMLLoader" />
+                              <elementDefinition Id="de7048c8-8e8d-48df-a0f6-ab07f48ffd5b" />
+                            </dependency>
+                            <dependency Id="23996e07-1cb8-4cbd-ab80-6b1078fb3627">
+                              <classMoniker Id="c09e0366-f893-4fc6-b96b-063a67deee3d" LastKnownName="Lm3Memory" />
+                              <elementDefinition Id="4de0b349-fef0-4abc-ad43-2daac0a69a08" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="f8402a11-16f7-404e-8e0c-dcc918606504" name="LearningMachineLib2">
+                    <elementDefinition Id="1f866f94-8299-4b45-a149-686fb67f27b3" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <class Id="5c29038a-7ca2-4250-929e-cbfcb2251c3f" name="LearningMachine2" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="889e5b61-c85b-4b8b-8cfa-85379773fde9" />
+                          <suppliersInternal>
+                            <dependency Id="5096ad97-a3f4-4f16-9286-08c6eae86a44">
+                              <classMoniker Id="5546cb7a-b244-462d-9704-ff424b7b04fd" LastKnownName="LM2MemoryFiller" />
+                              <elementDefinition Id="eb03cfdc-5c39-4e88-be28-78bbe9e76533" />
+                            </dependency>
+                          </suppliersInternal>
+                          <generalsInternal>
+                            <generalization Id="03458d5c-d541-4d88-923b-a4ce5bc5a7d1" isSubstitutable="false">
+                              <classMoniker Id="ab51a1d2-b258-4923-86f7-996b3024ebf2" LastKnownName="STDLearningMachine" />
+                              <elementDefinition Id="0128e273-3076-415e-98aa-edd6c2e68de9" />
+                            </generalization>
+                          </generalsInternal>
+                          <targetEnds>
+                            <association Id="98e9e291-51fc-4482-bf21-3019d6495b6c" isDerived="false" sourceEndRoleName="LearningMachine2" targetEndRoleName="Lm2Memory" isLeaf="false" isAbstract="false">
+                              <classMoniker Id="ff5c3af7-8c5b-40e6-9928-55ef9676823e" LastKnownName="Lm2Memory" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="277f74c5-6b84-4d86-b2d4-a846dcdf9f22" name="LearningMachine2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="b065ba3f-4190-4227-9c33-6fe3549d99d1" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="c7f782da-ee3c-403e-b56d-f7d50895cf06" name="Lm2Memory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <elementDefinition Id="f53de550-cc8a-45a4-a64f-4452357aa98b" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="1f24693e-ae3f-490b-b64e-4888bd2532d1" />
+                            </association>
+                          </targetEnds>
+                          <ownedAttributesInternal>
+                            <property Id="2356082f-996f-42ce-b19b-b0a5c9293a7d" name="memory" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="00c6444a-0cc2-416b-930b-9a543169ddac" />
+                            </property>
+                            <property Id="041ba97a-6e03-414b-94d3-bc1e194aeab7" name="flags" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="548c0d07-a528-4109-8c1d-ea5d17554a4a" />
+                            </property>
+                          </ownedAttributesInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="00d610f3-553e-4424-8335-5f80619a3a83" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="6e119101-c67d-4895-8bb5-4d13ca4bfb36" />
+                            </operation>
+                            <operation Id="a7243c16-d762-4d40-b93c-42f626d959b7" name="Fill" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="2318fe44-fb90-41e0-90ed-41d43129153f" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="c7140942-1b33-457b-8fe3-d9c4dfa3acaa" name="program" direction="In" isUnique="false">
+                                    <elementDefinition Id="9b24eaf5-625c-4d11-a092-57186067e528" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                            <operation Id="74f96bb9-5242-4eb4-8c82-07ce4f973c97" name="GetMemorySection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="4ee4fcdf-5665-4cb3-918b-dd27362fbc63" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="d66be698-d25f-4b89-9166-7d20ce34fdee" direction="Return">
+                                    <elementDefinition Id="2cee5586-4e27-4a5e-9fbe-57cd727a6f84" />
+                                    <type_NamedElement>
+                                      <referencedTypeMoniker Id="39d2e0fa-6ca0-4966-98cf-86ef7a1a90b9" LastKnownName="IMemoryOrganisation" />
+                                    </type_NamedElement>
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="5546cb7a-b244-462d-9704-ff424b7b04fd" name="LM2MemoryFiller" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="d087dc71-c67b-4fc3-b6b1-949c5cde4edd" />
+                          <suppliersInternal>
+                            <dependency Id="1d6bba1d-371a-4ed4-a584-215795691e24">
+                              <classMoniker Id="16caddc2-ae45-44c5-b8a8-ac82eb549b41" LastKnownName="LM3ProgramXMLLoader" />
+                              <elementDefinition Id="3602f8e4-8486-4462-b1d2-aebe309b5c41" />
+                            </dependency>
+                            <dependency Id="ed119138-f1b2-4ce9-983d-e31d200ef3b0">
+                              <classMoniker Id="ff5c3af7-8c5b-40e6-9928-55ef9676823e" LastKnownName="Lm2Memory" />
+                              <elementDefinition Id="abc58dfe-0638-48fb-ab14-b55f58a38628" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="16caddc2-ae45-44c5-b8a8-ac82eb549b41" name="LM3ProgramXMLLoader" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="9ee0edd3-164e-42a2-b295-5394c735b5d3" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="e13bb08c-8079-444f-9cb6-a76b02ef2e75">
+                              <interfaceMoniker Id="22b2d8af-63d9-41de-ad4f-59f7bb6ad26a" LastKnownName="IProgramLoader" />
+                              <elementDefinition Id="aa390520-6755-4661-ae7d-fced5fc7914a" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="5f233730-c4e9-4969-9b62-202a267e0398" name="LM2ProgramXMLCreator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="c79aab35-fce0-4968-8909-695d37f4eb5d" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="1a70a768-ddda-4351-9a1e-a0ba9eb1e471">
+                              <interfaceMoniker Id="985c2a08-5d0a-4c2d-9f2b-d06d57a5633b" LastKnownName="IProgramCreator" />
+                              <elementDefinition Id="4ac282bf-4dca-4b29-943a-eee052230793" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="5b529733-d275-40b2-8642-d3f84411dade" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="143f5b89-2113-47e9-a831-985d97385bf1" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="ff5c3af7-8c5b-40e6-9928-55ef9676823e" name="Lm2Memory" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="a5864823-f6ce-4e3c-842d-b1d9dfd44e49" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="8bdd8330-c34d-4049-b01e-f79d358694c3">
+                              <interfaceMoniker Id="90ea0140-ff2e-4613-8508-fab02e50663f" LastKnownName="IMemoryOrganisation" />
+                              <elementDefinition Id="4f78cecf-bf91-4b44-b040-870c84609d92" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <targetEnds>
+                            <association Id="5ab95840-5d5b-4e19-90c2-65b203c02a8e" isDerived="false" sourceEndRoleName="Lm2Memory" targetEndRoleName="IMemoryCell" isLeaf="false" isAbstract="false">
+                              <interfaceMoniker Id="fddb6e62-5773-4cbf-9cc8-c12e35095a6f" LastKnownName="IMemoryCell" />
+                              <relationshipOwnedElementsInternal>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="918e2259-50a1-4b2c-b528-65a4a14cccfe" name="Lm2Memory" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                                    <elementDefinition Id="08032a26-d1b0-400a-b7fd-1a32af241749" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                                <associationHasOwnedEnds>
+                                  <memberEnd Id="c06038a1-2b18-4e3b-83f5-cfd8ce30a83c" name="IMemoryCell" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                                    <lowerValueInternal>
+                                      <literalString Id="6d076b6b-7a07-4540-b23e-4127144e34ec" name="Lower" value="n">
+                                        <elementDefinition Id="fa34f91f-f4d5-4be2-b0de-c1a37b288774" />
+                                      </literalString>
+                                    </lowerValueInternal>
+                                    <upperValueInternal>
+                                      <literalString Id="71fc2100-0186-4ef7-a24b-b6b4e8cb60f6" name="Upper" value="n">
+                                        <elementDefinition Id="12f10964-fb08-4001-8226-164453752658" />
+                                      </literalString>
+                                    </upperValueInternal>
+                                    <elementDefinition Id="5f190bd9-74d2-4e53-bb24-864b8ecf87b4" />
+                                  </memberEnd>
+                                </associationHasOwnedEnds>
+                              </relationshipOwnedElementsInternal>
+                              <elementDefinition Id="f9cea15a-2938-4cf0-aa83-2bf221607d8a" />
+                            </association>
+                          </targetEnds>
+                          <ownedAttributesInternal>
+                            <property Id="e255b7a7-ae4f-4586-80db-5a8ba62a548c" name="MemoryCellList" visibility="Private" isLeaf="true" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="bb39e9c8-99b2-45b7-bbbc-9c46acb33432" />
+                            </property>
+                          </ownedAttributesInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="ec8ea772-6a9f-4195-956a-e910289c2827" name="GetAddressValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="e0ca8bbb-5297-488b-aba2-0cd865941d94" />
+                            </operation>
+                            <operation Id="3f3a68c3-400d-499d-aa9a-cb8eeb488ad8" name="GetWholeMemory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="a6b61ce3-5a4c-4a2b-88c0-4cc6cdff71cf" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="d7bcced1-9846-4328-844c-38df90d53ded" name="Lm2Parser" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="e311067a-dd61-4163-955f-0ca25d28c276" />
+                          <generalsInternal>
+                            <generalization Id="b02a98f1-cb09-49da-a59d-e040972257ba" isSubstitutable="false">
+                              <classMoniker Id="c270f9af-5182-4775-b105-2c815f5f13b2" LastKnownName="LmParser" />
+                              <elementDefinition Id="dd59b3ec-df30-4fa7-bc9d-421aaccb8bde" />
+                            </generalization>
+                          </generalsInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="2be4029d-633a-4167-904f-512ed109c2d0" name="CreateProgram" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="21453321-c88d-4df6-a261-13b45a3ce26f" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="b6dd2982-5355-4661-b96d-4231aed45b93" direction="Return">
+                                    <elementDefinition Id="6f14c685-39e1-474e-a4c5-0c096a0130a9" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="6fe5704f-56e9-445e-b025-7c592e090601" name="Lm2LexBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="965cca17-f5c4-45cc-b864-6238776a0516" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="8b1f808a-60fe-4098-b6c4-ac151507fd5a">
+                              <interfaceMoniker Id="1fe6247c-85f3-4d66-bbc7-e40ca85ddb68" LastKnownName="ILexBlock" />
+                              <elementDefinition Id="8523dfa5-8409-4d58-af24-d6a2381b982e" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="5059fe8b-7421-476a-b292-ea4ba999e8dc" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="a0ec8bbc-c271-43d9-aa7c-157bb8c82ed7" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="8d66f162-8eb5-4322-af58-c81f53b1f749" name="Lm2SyntaxBlock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="8a71e2ca-1798-4821-adc3-ebdf5bc6477e" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="3cc83864-6cdd-4f49-a84d-eb91fb171850">
+                              <interfaceMoniker Id="24312c06-8a24-46fd-8447-1586e4ee4c68" LastKnownName="ISyntxBlock" />
+                              <elementDefinition Id="76e907e1-3186-4b09-b0de-0d2571d4f77a" />
+                            </interfaceRealization>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="b7adb4cf-e922-4016-a645-8fcfc0ae4cd6" name="Parse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="ac2a4eeb-37b8-462a-b2ea-9a209d5f808a" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="051c1bb4-4d34-4790-b361-db1da5aa6f70" name="LM2Executor" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="c01fad45-d62f-4e6c-8a4a-7085fd65b01d" />
+                          <suppliersInternal>
+                            <interfaceRealization Id="ca03e14a-907e-408a-944b-8ab7b2856982">
+                              <interfaceMoniker Id="56ca07de-f47e-404a-8848-6d6ffa68a092" LastKnownName="ILMExecutor" />
+                              <elementDefinition Id="e4c5f5e1-2452-43f8-9aa5-edb652b203a8" />
+                            </interfaceRealization>
+                            <dependency Id="792e86f5-1b68-433c-b6f3-f441d0b68b2a">
+                              <classMoniker Id="8affe15c-4aa2-42cf-a271-b5b0ccefe81d" LastKnownName="ACommands" />
+                              <elementDefinition Id="20847d8b-4ce5-4a14-afb7-3789237757bc" />
+                            </dependency>
+                            <dependency Id="2e526107-551c-4f77-ab4d-b915856781cb">
+                              <classMoniker Id="5511ea7b-c702-400b-a9a1-c4dca8bba831" LastKnownName="LCommands" />
+                              <elementDefinition Id="e734a260-7e1a-4737-8241-e1098b2ac4c5" />
+                            </dependency>
+                          </suppliersInternal>
+                          <ownedOperationsInternal>
+                            <operation Id="27ed678d-a692-4a25-801d-290487e6cae4" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="326562e5-b094-4dcd-9138-e97e4273bff8" />
+                              <ownedParameters>
+                                <operationHasOwnedParameters>
+                                  <parameter Id="1bb11f6b-0eac-478a-b7fb-181ae0d40cf4" name="command" direction="In">
+                                    <elementDefinition Id="27993e3a-9b21-4c8a-b1b1-f49db12f3f9e" />
+                                  </parameter>
+                                </operationHasOwnedParameters>
+                              </ownedParameters>
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="946b663f-1fe8-4313-9efa-7899eb499260" name="Lm2Command" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="55f09c64-a8bf-4a97-b476-28c49545585b" />
+                          <generalsInternal>
+                            <generalization Id="889591ca-2486-4636-a943-3860000c1c24" isSubstitutable="false">
+                              <classMoniker Id="559b6461-9c33-49e2-8e8b-1a6752f90455" LastKnownName="LmCommand" />
+                              <elementDefinition Id="30f29379-e3ae-46c8-a453-451a556f6fc6" />
+                            </generalization>
+                          </generalsInternal>
+                          <ownedAttributesInternal>
+                            <property Id="d1ed0885-f26e-4d3e-83a8-346a64a78115" name="A1" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="f2dd5a57-cbec-48f4-9855-2f159f9c2fbe" />
+                            </property>
+                            <property Id="2ee9f5b7-1aca-4de0-b790-211c9f9b6b8b" name="A2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="14ab46e9-8eef-4da5-afee-a87e82f7b45a" />
+                            </property>
+                          </ownedAttributesInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="8affe15c-4aa2-42cf-a271-b5b0ccefe81d" name="ACommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="566502db-ab66-489c-97bf-0226c51a0755" />
+                          <ownedOperationsInternal>
+                            <operation Id="89566992-7efc-42f0-9bff-0ca3b7f1d4ea" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="de63a58c-9c95-40f2-a80d-3866ff7ab4b7" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="5511ea7b-c702-400b-a9a1-c4dca8bba831" name="LCommands" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="0f4bb336-69cf-44ad-b4a8-ec9ca70a7738" />
+                          <ownedOperationsInternal>
+                            <operation Id="24a91aa6-b1ff-44ee-a730-9609eeabaebe" name="Execute" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                              <elementDefinition Id="aa765934-549c-4357-986f-06155a8060aa" />
+                            </operation>
+                          </ownedOperationsInternal>
+                        </class>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="39d2e0fa-6ca0-4966-98cf-86ef7a1a90b9" name="IMemoryOrganisation" isAbstract="false" isLeaf="false" cachedFullName="LmInterpreterMainModel::LmInterpreterLib::IMemoryOrganisation">
+        <elementDefinition Id="694c0858-70a0-4d82-bf9f-9a6ce6c3f75f" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a29dacd8-8d0f-42aa-a4de-6f2ba302a047" name="LmInterpreterMainModel">
+    <elementDefinition Id="7f4d5c76-ac41-4b5a-98ae-cf662dd3e975" />
+    <profileInstances>
+      <packageHasProfileInstances Id="dad16abf-9fbf-418b-9d2d-5e4dd07a29b0">
+        <profileInstance Id="f3e88c1c-1db4-4a3d-91b8-edb3dc00f91d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="9dc4b29a-0733-4446-a861-edd92ea63dd9">
+        <profileInstance Id="ce5348c8-6001-4b8d-883a-87651792a929" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

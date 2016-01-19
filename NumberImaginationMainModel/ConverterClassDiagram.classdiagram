@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4c2efbdd-b4c0-4a11-9a7f-28cebcabb039" name="ConverterClassDiagram" linkedPackageId="83117325-82e1-40dd-a5ba-0ba88841b0b0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="bcea64fe-d4f1-47dd-9d12-75686c623813" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e3d8cbd5-cd35-4b34-8f93-044329d04222" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="97e7628c-098a-4fda-a0b9-b714cf564856" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5d9420b6-522a-4f2d-bd53-503e01c57a35" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1f3850b2-464d-403a-9fb2-bac6626984b8" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="6bca5efc-bf6b-4a0c-a042-f16e9d36483f" name="NumberImagination">
+        <elementDefinition Id="9eec2474-a5a5-4b60-a040-a4eec68e3dce" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="afe9a02e-ff5f-468e-91a8-724fa1539586" name="ComplementCode" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c364d42f-30f0-4f68-bcce-0d0d5a395bae" />
+              <ownedAttributesInternal>
+                <property Id="43e4172f-2419-4455-b146-8003aeac1850" name="value" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4232da91-b97b-4f44-9e87-f8093868e552" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1f3850b2-464d-403a-9fb2-bac6626984b8" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="827e48da-ebb4-49e6-912d-4090a98db1aa" name="rank" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0c36f8b3-81e3-46a3-8107-ca5e4a43988b" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="b435b49f-1d77-4bf9-95d1-af5ea0f0b27f" name="Operator+" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ff16a14f-1fa2-4e43-9338-cc32ad693314" />
+                </operation>
+                <operation Id="3bc9b59f-d7c0-4c84-976a-87d1ac11744b" name="Operator-" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c1440475-3393-4a82-9e9f-623800a41da4" />
+                </operation>
+                <operation Id="7c443906-2c06-4f99-a6db-0d1037c3b8f5" name="Opertator/" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="622e8dfa-12c3-458d-91c6-2e47e7383a32" />
+                </operation>
+                <operation Id="8a16c3f1-af9f-4851-9535-7397e9dbdceb" name="Operator*" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9039af10-7083-4f28-abbb-136a23207e4d" />
+                </operation>
+                <operation Id="35fc064e-6557-4726-a134-b522c05e52d3" name="Operator==" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c9e607ad-f933-4394-8aee-c8b3c37931d8" />
+                </operation>
+                <operation Id="2eee61f9-4b35-4429-85d7-09d46a0ad335" name="Operator&lt;=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e1e54bfd-fb6f-4af8-8743-6d52137e7c5e" />
+                </operation>
+                <operation Id="653e9f5e-fe3d-41d6-a7e5-8e8fe4dd67ff" name="Operator&gt;=" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b376eef0-7f91-4951-832d-8f096b7c4121" />
+                </operation>
+                <operation Id="8cb42702-26f8-4675-bc4b-eec5158bba05" name="Operator&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6472275e-4e44-4c86-9690-5a00d1201f03" />
+                </operation>
+                <operation Id="7bdba1ab-1d9c-493c-8306-db04d21bf18d" name="Operator&lt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6e4a5a86-693c-4311-a272-660a7d13e5db" />
+                </operation>
+                <operation Id="e1f9fad4-8ca5-4403-8208-f3027f75575e" name="ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5e68fead-7ec4-4181-8ec2-882f14277c36" />
+                </operation>
+                <operation Id="2bc5c424-0355-445e-b863-583d864fff88" name="Equal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7c47ed6a-cb05-4ef2-b88a-55ef6b339f46" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <package Id="89b58ed9-2cf2-4049-93f7-f1408c45fd68" name="Converter">
+        <elementDefinition Id="210f3174-7566-499a-982e-55d06f3c9651" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="771ee163-f344-43ad-9f11-0ff3b0b377cc" name="Converter" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="91885ce1-a996-4256-876b-65706048cc0f" />
+              <suppliersInternal>
+                <dependency Id="18e2e46b-1b2a-453f-bd44-8ef8dbf33af0">
+                  <interfaceMoniker Id="7ca55b96-8cde-45d1-85dc-a67ab6277fd6" LastKnownName="IConvertFromDecNumber" />
+                  <elementDefinition Id="6565ecfb-c749-4c0d-a317-c7a56b8a47fd" />
+                </dependency>
+                <dependency Id="1b6b9501-5475-4344-b119-757104a8f96f">
+                  <interfaceMoniker Id="eca59dd7-8343-41d4-9889-39a27c546158" LastKnownName="IConvertToDecNumber" />
+                  <elementDefinition Id="ea159591-9df3-43bf-a086-19b6a03b2f60" />
+                </dependency>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="59b97263-bef3-4438-accc-50f78f3c4092" name="ConvertToDec" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8cb493dc-37ba-4a2c-b240-743ce272e55a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ca9aeb9d-157a-488e-b873-e3ebfbb212a6" direction="Return">
+                        <elementDefinition Id="171d0e03-5d3e-4822-868b-b2b134939982" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="97e7628c-098a-4fda-a0b9-b714cf564856" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ce02516f-e3da-4d04-906d-a47296a889db" name="ConvertFromDec" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="acae06e7-6097-45c9-a7e8-4158aaaf8f57" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="88bcb79a-52e4-42a5-99d4-b29bc6c42d7f" direction="Return">
+                        <elementDefinition Id="8daf33ab-3ee8-4a81-a248-e6831d187257" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e3d8cbd5-cd35-4b34-8f93-044329d04222" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9a40a854-eb6f-49df-80bd-f0ca9a5c982d" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9dcca815-ac4c-461d-a0ea-2bab84a1fd2e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="728416fa-3c5e-4c9c-a333-21c5da1ad0cb" direction="Return">
+                        <elementDefinition Id="bb28b7a5-757a-470a-a9c6-5352a85a9bac" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="bcea64fe-d4f1-47dd-9d12-75686c623813" LastKnownName="String" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="7ca55b96-8cde-45d1-85dc-a67ab6277fd6" name="IConvertFromDecNumber" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="c48fd351-431b-412c-ba83-c61b38f9ef3c" />
+              <ownedOperations>
+                <operation Id="a9256fd2-ca28-4cfb-958d-58ce3894ba2d" name="Convert" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="300ccea4-d5b3-427c-86e5-ee3b1b4dadbf" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="b4d233a2-35e6-453b-9156-b8d19798ebe9" name="ComplCodeConvertFromDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="64125726-615c-4fb5-b8b3-dc73bf4e4045" />
+              <suppliersInternal>
+                <interfaceRealization Id="5b6991ad-7603-49ac-922d-9f2897ac3077">
+                  <interfaceMoniker Id="7ca55b96-8cde-45d1-85dc-a67ab6277fd6" LastKnownName="IConvertFromDecNumber" />
+                  <elementDefinition Id="27b86953-f43d-4b4f-953a-af6d5cade668" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="d7a2bac4-4539-4a0c-bf35-2f57c57fd48b" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f144c868-4ecc-4c08-86ef-4f00d6d94477" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c6a3034b-9417-4506-9f16-71c6fe4fca28" name="InversCodeConvertFromDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c981aa43-8757-4abd-afed-08af2449236f" />
+              <suppliersInternal>
+                <interfaceRealization Id="201ad2a9-a714-4f36-9466-bbf5e31bb241">
+                  <interfaceMoniker Id="7ca55b96-8cde-45d1-85dc-a67ab6277fd6" LastKnownName="IConvertFromDecNumber" />
+                  <elementDefinition Id="a954d249-4eaf-4282-96dd-df98ffeede9e" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="b72885cd-f05f-4555-9e4c-b6b3a12e12e1" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a5ffc68a-ca6a-44cb-bbef-c99270b6b26a" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e5cca887-7e36-429d-9667-e7d535204ddc" name="STDConvertFromDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="445b656e-ca27-44f5-9cfa-fd2c40f542be" />
+              <suppliersInternal>
+                <interfaceRealization Id="d61de0bf-6416-432e-9188-34851b12808b">
+                  <interfaceMoniker Id="7ca55b96-8cde-45d1-85dc-a67ab6277fd6" LastKnownName="IConvertFromDecNumber" />
+                  <elementDefinition Id="fac577e4-091f-439e-a661-d830570bc604" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="8fa12437-d749-4cd2-b9c0-83dab30aa689" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="47425176-e985-4f94-85c5-e2ede319707b" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="eca59dd7-8343-41d4-9889-39a27c546158" name="IConvertToDecNumber" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="9834d939-d131-46a8-b1e4-ade0a47bf839" />
+              <ownedOperations>
+                <operation Id="798e1fca-2824-4e67-8620-eae3f6954712" name="Convert" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2be6aee4-a725-4ba9-944a-81343939276f" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="1f2e1335-961c-427d-b3c6-f0e3e5a0c4c8" name="STDConvertToDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="3e5e7ce9-e26d-433d-a72e-a3ea7a849096" />
+              <suppliersInternal>
+                <interfaceRealization Id="9fba51c3-99ca-4276-8cda-5579e29bb1e9">
+                  <interfaceMoniker Id="eca59dd7-8343-41d4-9889-39a27c546158" LastKnownName="IConvertToDecNumber" />
+                  <elementDefinition Id="87c61b51-029f-4b88-ba4c-a3ad63d8e697" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="2a03a9c4-c772-4cae-986e-e74a3befc2ba" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9142cf9f-b512-456d-ab27-baa72a9e6f30" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="1c8fe00b-ba34-43fd-b654-aa749abc692e" name="ComplCodeToDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4fea75de-ede7-4225-88b4-efeb05e0b3f6" />
+              <suppliersInternal>
+                <interfaceRealization Id="70a04b03-57a0-4d8a-ae9a-369c195c7d69">
+                  <interfaceMoniker Id="eca59dd7-8343-41d4-9889-39a27c546158" LastKnownName="IConvertToDecNumber" />
+                  <elementDefinition Id="1e5b9d4a-9eb4-4a78-88c7-bc8e516b7b86" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="2bb6d86a-78e6-4cd4-a478-705df238cf52" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="564603b5-0d42-4ef4-9cd0-9f80fe8f3aa6" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f88d30e8-ce79-4f8e-9a87-c9c3471fdca8" name="InversCodeToDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2bd84fcb-cd7c-4b73-9deb-44aeecda94bf" />
+              <suppliersInternal>
+                <interfaceRealization Id="49e4c24d-abae-4e2f-a371-7bd9306dfce3">
+                  <interfaceMoniker Id="eca59dd7-8343-41d4-9889-39a27c546158" LastKnownName="IConvertToDecNumber" />
+                  <elementDefinition Id="de3b1e56-9bfd-4e9f-9ea8-5629a0e21c03" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="41a89c55-eacb-4b23-9a3d-718c12e94f03" name="Convert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2f03b29d-f937-4f21-b8c9-ab5b5967186f" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="83117325-82e1-40dd-a5ba-0ba88841b0b0" name="Converter">
+    <elementDefinition Id="ae4a7e47-f915-4395-a97f-2d64b6c4867c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="49050a10-3e9e-4f25-8ee3-22ac7c570027">
+        <profileInstance Id="9b7a5a75-2581-422c-818c-6bd1254d099d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8460b55f-4b33-494d-9bc7-6e00448f8663">
+        <profileInstance Id="1f8b0844-8fee-422b-bc09-b7181c2526c8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
