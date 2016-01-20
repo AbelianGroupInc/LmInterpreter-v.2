@@ -15,12 +15,6 @@ namespace NumberImagination.ConverterLib
             if (!decNumbRegExp.IsMatch(number))
                 throw new ConverterException(ConverterExceptions.InvalidDecNumber);
         }
-
-        protected void TestForNumericalSystemCorrectness(int toNumericalSystem)
-        {
-            if (toNumericalSystem > 32 || toNumericalSystem <= 1)
-                throw new ConverterException(ConverterExceptions.InvalidNumaricalSystem);
-        }
         public abstract string Convert(string number);
     }
 }

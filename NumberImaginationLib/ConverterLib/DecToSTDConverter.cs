@@ -7,24 +7,34 @@ using System.Numerics;
 
 namespace NumberImagination.ConverterLib
 {
-    public class FromDecToSTDConverter : FromDecNumberConverter
+    public class DecToSTDConverter : FromDecNumberConverter
     {
         private int mToNumericalSystem;
         // Takes as a parametr cur numerical system in which is needed to convert
-        public FromDecToSTDConverter(int toNumericalSystem)
+        public DecToSTDConverter(int toNumericalSystem)
         {
             TestForNumericalSystemCorrectness(toNumericalSystem);
 
             mToNumericalSystem = toNumericalSystem;
         }
-
+        private void TestForNumericalSystemCorrectness(int toNumericalSystem)
+        {
+            if (toNumericalSystem > 32 || toNumericalSystem <= 1)
+                throw new ConverterException(ConverterExceptions.InvalidNumaricalSystem);
+        }
         public override string Convert(string number)
         {
             CheckNumberCorrectness(number);
 
-            BigInteger numberToConvertation = BigInteger.Parse(number, System.Globalization.NumberStyles.AllowLeadingSign);
+            bool isMinus = false;
+            if (number[0] == '-')
+                isMinus = true;
 
-            return DoConvert(numberToConvertation);
+            string mantissa = isMinus ? number.Substring(1, number.Length - 1) : number;
+
+            BigInteger convertatingNumber = BigInteger.Parse(mantissa, System.Globalization.NumberStyles.AllowLeadingSign);
+
+            return isMinus ? '-' + DoConvert(convertatingNumber) : DoConvert(convertatingNumber);
         }
 
         // Implements convertation algorithm

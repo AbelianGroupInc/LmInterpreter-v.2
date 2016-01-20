@@ -198,7 +198,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="e5cca887-7e36-429d-9667-e7d535204ddc" name="FromDecToSTDConverter" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="e5cca887-7e36-429d-9667-e7d535204ddc" name="DecToSTDConverter" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="445b656e-ca27-44f5-9cfa-fd2c40f542be" />
               <generalsInternal>
                 <generalization Id="0b809962-0427-497f-aafa-bce0c6ab013d" isSubstitutable="false">
@@ -209,7 +209,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="b4d233a2-35e6-453b-9156-b8d19798ebe9" name="FromDecToComplCodeConverter" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="b4d233a2-35e6-453b-9156-b8d19798ebe9" name="DecToComplCodeConverter" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="64125726-615c-4fb5-b8b3-dc73bf4e4045" />
               <generalsInternal>
                 <generalization Id="a004b500-cd51-425e-b856-823ff0f5cea5" isSubstitutable="false">
@@ -220,7 +220,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="c6a3034b-9417-4506-9f16-71c6fe4fca28" name="InversCodeToDec" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="c6a3034b-9417-4506-9f16-71c6fe4fca28" name="CodeToDec" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="c981aa43-8757-4abd-afed-08af2449236f" />
               <generalsInternal>
                 <generalization Id="02ab9ef3-b323-40ea-8188-032de7e5daf9" isSubstitutable="false">
