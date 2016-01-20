@@ -8,6 +8,6 @@ namespace NumberImagination.ConverterLib
 {
     public interface IToDecNumberConverter
     {
-        string Convert(string numb);
+        string Convert(string number);
     }
 }
