@@ -5,7 +5,7 @@ using NumberImagination;
 namespace NumberImaginationTests
 {
     [TestClass]
-    public class ComplementCodeDeepTests
+    public class VComplementCodeDeepTests
     {
         [TestMethod]
         public void AdditionTest()
@@ -21,7 +21,7 @@ namespace NumberImaginationTests
         [TestMethod]
         public void AdditionTestTwo()
         {
-            // 5 + (-5) = 0
+           // 5 + (-5) = 0
             ComplementCode first = new ComplementCode(5, "101");
             ComplementCode second = new ComplementCode(5, "101");
 
@@ -55,7 +55,7 @@ namespace NumberImaginationTests
         [TestMethod]
         public void MultiplyTestTwo()
         {
-            // 5 * -2 = -10
+           // 5 * -2 = -10
             ComplementCode first = new ComplementCode(4, "101");
             ComplementCode second = new ComplementCode(4, "10");
 
@@ -89,9 +89,9 @@ namespace NumberImaginationTests
         [TestMethod]
         public void DivideTestThree()
         {
-            // 10 / -5 = -2
-            ComplementCode A = new ComplementCode(5, "1010");
-            ComplementCode B = new ComplementCode(5, "101");
+           // 10 / -5 = -2
+            ComplementCode A = new ComplementCode(4, "1010");
+            ComplementCode B = new ComplementCode(4, "101");
 
             A = A / -B;
 
@@ -122,9 +122,9 @@ namespace NumberImaginationTests
         [TestMethod]
         public void IncremTest()
         {
-            // 5++ = 6
+           // 5++ = 6
             ComplementCode A = new ComplementCode(3, "101");
-            // ++5 = 6
+           // ++5 = 6
             ComplementCode B = new ComplementCode(3, "101");
 
             A++;
@@ -136,9 +136,9 @@ namespace NumberImaginationTests
         [TestMethod]
         public void DecrimTest()
         {
-            // --5 = 4
+           // --5 = 4
             ComplementCode A = new ComplementCode(3, "101");
-            // 5-- = 4
+           // 5-- = 4
             ComplementCode B = new ComplementCode(3, "101");
 
             --A;
@@ -155,7 +155,7 @@ namespace NumberImaginationTests
             ComplementCode B = new ComplementCode(3, "10");
 
             Assert.IsTrue(A > B);
-            // 2 > -2
+           // 2 > -2
             A = new ComplementCode(3, "10");
             B = new ComplementCode(3, "10");
             B = -B;
@@ -178,7 +178,7 @@ namespace NumberImaginationTests
         [TestMethod]
         public void EqualTest()
         {
-            // 5 = 5
+           // 5 = 5
             ComplementCode A = new ComplementCode(5, "101");
             ComplementCode B = new ComplementCode(5, "101");
 
@@ -222,7 +222,7 @@ namespace NumberImaginationTests
         [TestMethod]
         public void LessOrEqualTestOne()
         {
-            // 3 =< 2
+           // 3 =< 2
             ComplementCode A = new ComplementCode(3, "11");
             ComplementCode B = new ComplementCode(3, "10");
 
@@ -240,7 +240,7 @@ namespace NumberImaginationTests
         [TestMethod]
         public void LessOrEqualTestThree()
         {
-            // 2 =< -2
+           // 2 =< -2
             ComplementCode A = new ComplementCode(3, "10");
             ComplementCode B = new ComplementCode(3, "10");
             B = -B;
