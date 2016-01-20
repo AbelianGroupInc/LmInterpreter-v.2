@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NumberImagination
 {
-    class ComplementCodeException : Exception
+    public class ComplementCodeException : Exception
     {
         public ComplementCodeException(string message) : base(message) { }
     }
