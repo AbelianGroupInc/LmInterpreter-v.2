@@ -90,8 +90,8 @@ namespace NumberImaginationTests
         public void DivideTestThree()
         {
             // 10 / -5 = -2
-            ComplementCode A = new ComplementCode(4, "1010");
-            ComplementCode B = new ComplementCode(4, "101");
+            ComplementCode A = new ComplementCode(5, "1010");
+            ComplementCode B = new ComplementCode(5, "101");
 
             A = A / -B;
 
