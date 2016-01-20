@@ -246,5 +246,12 @@ namespace NumberImaginationTests
             B = -B;
             Assert.IsTrue(B <= A);
         }
+        [TestMethod]
+        [ExpectedException(typeof(ComlementCodeExeption),
+    "Ошибка")]
+        public void Exeption()
+        {
+            ComplementCode A = new ComplementCode(-3, "11");
+        }
     }
 }
