@@ -81,11 +81,11 @@ namespace ConverterTests
         [TestMethod]
         public void MultiplicationTest()
         {
-            ComplementCode cc1 = new ComplementCode(5, "10100");
-            ComplementCode cc2 = new ComplementCode(5, "11110");
+            ComplementCode cc1 = new ComplementCode(6, "00101");
+            ComplementCode cc2 = new ComplementCode(6, "00011");
 
-            cc1 *= cc2;
-            Assert.AreEqual("11000", cc1.ToString());
+            cc1 = cc1 * (-cc2);
+            Assert.AreEqual("110001", cc1.ToString());
         }
 
         [TestMethod]
@@ -124,6 +124,15 @@ namespace ConverterTests
 
             cc1 %= cc2;
             Assert.AreEqual("00000011", cc1.ToString());
+        }
+
+        [TestMethod]
+        public void LessOrEqualTest()
+        {
+            ComplementCode cc1 = new ComplementCode(5, "00100");
+            ComplementCode cc2 = new ComplementCode(5, "00001");
+
+            Assert.IsFalse(cc1 <= cc2);
         }
     }
 }
