@@ -8,24 +8,44 @@ namespace NumberImagination.ConverterLib
 {
     public class DecToInversCodeConverter : FromDecNumberConverter
     {
-        // Takes as a parametr cur numerical system in which is needed to convert
-        public DecToInversCodeConverter() { }
+        private const char cMinusSign = '1';
+        private const char cPlusSign = '0';
+        // Takes as a parametr digital capacity in which is needed to represent resulting number
+        private int mBitCapacity;
+        public DecToInversCodeConverter(int bitCapacity) 
+        { 
+            if(bitCapacity <= 0)
+                throw new ConverterException(ConverterExceptions.InvalidBitCapacity);
+
+            mBitCapacity = bitCapacity;
+        }
 
         public override string Convert(string number)
         {
             CheckNumberCorrectness(number);
 
-            StringBuilder binRepresentation = new StringBuilder(Converter.Convert(new DecToSTDConverter(2), number));
+            string binRepresentation = Converter.Convert(new DecToSTDConverter(2), number);
 
-            for (int i = 0; i < binRepresentation.Length; i++)
+            StringBuilder inversCode = new StringBuilder(AddNonsignificantZeroes(GetMantissa(binRepresentation), 
+                mBitCapacity));
+
+            if (IsMinusNumber(binRepresentation))
+                InverseMantissaBits(inversCode);
+
+
+            return inversCode.ToString();
+        }
+
+        private static void InverseMantissaBits(StringBuilder inversCode)
+        {
+            // i = 1 - beginning of a mantissa
+            for (int i = 0; i < inversCode.Length; i++)
             {
-                if (binRepresentation[i] == '0')
-                    binRepresentation[i] = '1';
+                if (inversCode[i] == cMinusSign)
+                    inversCode[i] = cPlusSign;
                 else
-                    binRepresentation[i] = '0';
+                    inversCode[i] = cMinusSign;
             }
-
-            return binRepresentation.ToString();
         }
     }
 }

@@ -26,15 +26,12 @@ namespace NumberImagination.ConverterLib
         {
             CheckNumberCorrectness(number);
 
-            bool isMinus = false;
-            if (number[0] == '-')
-                isMinus = true;
+            BigInteger convertatingNumber = BigInteger.Parse(GetMantissa(number),
+                System.Globalization.NumberStyles.AllowLeadingSign);
 
-            string mantissa = isMinus ? number.Substring(1, number.Length - 1) : number;
-
-            BigInteger convertatingNumber = BigInteger.Parse(mantissa, System.Globalization.NumberStyles.AllowLeadingSign);
-
-            return isMinus ? '-' + DoConvert(convertatingNumber) : DoConvert(convertatingNumber);
+            return IsMinusNumber(number) ? 
+                '-' + DoConvert(convertatingNumber) : 
+                DoConvert(convertatingNumber);
         }
 
         // Implements convertation algorithm

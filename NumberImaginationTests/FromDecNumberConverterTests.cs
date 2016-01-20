@@ -43,10 +43,32 @@ namespace ConverterTests
         [TestMethod]
         public void TestForConvertationToInversCode()
         {
-            Assert.AreEqual("0111",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(), "8"));
-            Assert.AreEqual("01100101100",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(), "1235"));
+            Assert.AreEqual("01000",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(5), "8"));
+            Assert.AreEqual("111110000100",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(12), "-123"));
+        }
+        [TestMethod]
+        public void TestForConvertationToComplementCode()
+        {
+            Assert.AreEqual("1000",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(), "8"));
+
+            Assert.AreEqual("101100101101",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(), "-1235"));
+        }
+        [TestMethod]
+        public void TestForNonsignificantZeroes()
+        {
+            Assert.AreEqual("00005",
+                new DecToSTDConverter(5).AddNonsignificantZeroes("5", 5));
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ConverterException),
+    "Неправильно указанная разрядность числа")]
+        public void TestForNonsignificantZeroesException()
+        {
+            new DecToSTDConverter(5).AddNonsignificantZeroes("500", 2);
         }
     }
 }
