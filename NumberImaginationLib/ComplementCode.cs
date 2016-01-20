@@ -6,8 +6,8 @@ namespace NumberImagination
 {
     public class ComplementCode : IComparable
     {
-        private char cTrueSymbol = '1';
-        private char cFalseSymbol = '0';
+        private static char cTrueSymbol  = '1';
+        private static char cFalseSymbol = '0';
 
         private bool[] mValue;
         private int mBitCapacity;
@@ -33,7 +33,7 @@ namespace NumberImagination
         public ComplementCode(int bitCapacity, string number) : this(bitCapacity)
         {
             if (number.Length > bitCapacity)
-                throw new Exception();
+                throw new ComplementCodeException(ComplementCodeExceptions.BitCapacityViolation);
 
             SetNumber(number);
         }
@@ -46,7 +46,7 @@ namespace NumberImagination
         public ComplementCode(int bitCapacity)
         {
             if (bitCapacity <= 0)
-                throw new Exception();
+                throw new ComplementCodeException(ComplementCodeExceptions.InvalidBitCapacity);
 
             mValue = new bool[bitCapacity];
             mBitCapacity = bitCapacity;
@@ -83,28 +83,30 @@ namespace NumberImagination
 
         public int CompareTo(object obj)
         {
+            const int cGreater =  1;
+            const int cLess    = -1;
+            const int cEqual   =  0;
+
             ComplementCode comparableСode = obj as ComplementCode;
 
             AreBitCapacityEqual(this, comparableСode);
 
-            int result = 0;
-
             if (BitIsLess(Sign, comparableСode.Sign))
-                return 1;
+                return cGreater;
 
             if (BitIsGreater(Sign, comparableСode.Sign))
-                return -1;
+                return cLess;
 
             for (int i = mValue.Length - 2; i >= 0; i--)
             {
                 if (BitIsGreater(mValue[i], comparableСode.mValue[i]))
-                    result = 1;
+                    return cGreater;
 
                 if (BitIsLess(mValue[i], comparableСode.mValue[i]))
-                    result = -1;
+                    return cLess;
             }
 
-            return result;
+            return cEqual;
         }
 
         #region Comparison operators 
@@ -183,9 +185,17 @@ namespace NumberImagination
             AreBitCapacityEqual(a, b);
             ComplementCode result = new ComplementCode(a.BitCapacity);
 
-            for (int i = 0; i < a.mValue.Length; i++)
-                if (a.mValue[i])
-                    result += b << i;
+            ComplementCode regA = Abs(a);
+            ComplementCode regB = Abs(b);
+
+            bool sign = a.Sign ^ b.Sign;
+
+            for (int i = 0; i < regA.mValue.Length; i++)
+                if (regA.mValue[i])
+                    result += regB << i;
+
+            if (sign)
+                result = -result;
 
             return result;
         }
@@ -197,7 +207,12 @@ namespace NumberImagination
             ComplementCode result = new ComplementCode(a.BitCapacity);
             ComplementCode temp = new ComplementCode(a.BitCapacity);
 
-            foreach (bool bit in a.mValue.Reverse())
+            ComplementCode regA = Abs(a);
+            ComplementCode regB = Abs(b);
+
+            bool sign = a.Sign ^ b.Sign;
+
+            foreach (bool bit in regA.mValue.Reverse())
             {
                 temp <<= 1;
 
@@ -205,12 +220,15 @@ namespace NumberImagination
                     temp++;
 
                 result <<= 1;
-                if (b <= temp)
+                if (regB <= temp)
                 {
                     result++;
-                    temp -= b;
+                    temp -= regB;
                 }
             }
+
+            if (sign)
+                result = -result;
 
             return result;
         }
@@ -237,7 +255,7 @@ namespace NumberImagination
 
         public static ComplementCode operator ++(ComplementCode a)
         {
-            ComplementCode cOne = new ComplementCode(a.BitCapacity, "1");
+            ComplementCode cOne = new ComplementCode(a.BitCapacity, cTrueSymbol.ToString());
             ComplementCode result = new ComplementCode(a.BitCapacity);
 
             result = a + cOne;
@@ -247,7 +265,7 @@ namespace NumberImagination
 
         public static ComplementCode operator --(ComplementCode a)
         {
-            ComplementCode cOne = new ComplementCode(a.BitCapacity, "1");
+            ComplementCode cOne = new ComplementCode(a.BitCapacity, cTrueSymbol.ToString());
             ComplementCode result = new ComplementCode(a.BitCapacity);
 
             result = a - cOne;
@@ -292,7 +310,7 @@ namespace NumberImagination
             for (int i = 0; i < number.Length; i++)
             {
                 if (number[i] != cFalseSymbol && number[i] != cTrueSymbol)
-                    throw new Exception();
+                    throw new ComplementCodeException(ComplementCodeExceptions.InvalidChar);
 
                 mValue[numberPosition - i] = (number[i] == cTrueSymbol);
             }
@@ -301,7 +319,7 @@ namespace NumberImagination
         private static void AreBitCapacityEqual(ComplementCode a, ComplementCode b)
         {
             if (a.BitCapacity != b.BitCapacity)
-                throw new Exception();
+                throw new ComplementCodeException(ComplementCodeExceptions.MismatchBitCapacity);
         }
 
         private static bool BitIsLess(bool a, bool b)
@@ -317,6 +335,17 @@ namespace NumberImagination
         private static bool BoolMedian(bool a, bool b, bool c)
         {
             return (a & b) || (a & c) || (b & c);
+        }
+
+        private static ComplementCode Abs(ComplementCode a)
+        {
+            ComplementCode result = new ComplementCode(a);
+
+            if (a.Sign)
+                result = -result;
+
+            return result;
+
         }
 
         #endregion
