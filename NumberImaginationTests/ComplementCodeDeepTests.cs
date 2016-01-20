@@ -247,28 +247,28 @@ namespace NumberImaginationTests
             Assert.IsTrue(B <= A);
         }
         [TestMethod]
-        [ExpectedException(typeof(ComplementCodeExeption),
+        [ExpectedException(typeof(ComplementCodeException),
     "Количество разрядов отрицательно")]
         public void Exeption()
         {
             ComplementCode A = new ComplementCode(-3, "11");
         }
         [TestMethod]
-        [ExpectedException(typeof(ComplementCodeExeption),
+        [ExpectedException(typeof(ComplementCodeException),
     "Длина мантисы больше чем число разрядом")]
         public void ExeptionOfBitCapacity()
         {
             ComplementCode A = new ComplementCode(3, "11111");
         }
         [TestMethod]
-        [ExpectedException(typeof(ComplementCodeExeption),
+        [ExpectedException(typeof(ComplementCodeException),
     "Передается не число")]
         public void ExeptionNotANumber()
         {
             ComplementCode A = new ComplementCode(3, "1a2");
         }
         [TestMethod]
-        [ExpectedException(typeof(ComplementCodeExeption),
+        [ExpectedException(typeof(ComplementCodeException),
     "Умножаються числа с развой разрядностью")]
         public void ExeptionOfBit()
         {
