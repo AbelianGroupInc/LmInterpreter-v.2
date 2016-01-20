@@ -95,7 +95,7 @@ namespace NumberImaginationTests
 
             A = A / -B;
 
-            Assert.AreEqual("1110", A.ToString());
+            Assert.AreEqual("11110", A.ToString());
         }
         [TestMethod]
         public void DivideTestFour()
