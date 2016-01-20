@@ -20,6 +20,14 @@ namespace NumberImagination
             }
         }
 
+        public bool Sign
+        {
+            get
+            {
+                return mValue.Last();
+            }
+        }
+
         #region Constructors
 
         public ComplementCode(int bitCapacity, string number) : this(bitCapacity)
@@ -37,6 +45,9 @@ namespace NumberImagination
 
         public ComplementCode(int bitCapacity)
         {
+            if (bitCapacity <= 0)
+                throw new Exception();
+
             mValue = new bool[bitCapacity];
             mBitCapacity = bitCapacity;
         }
@@ -78,7 +89,13 @@ namespace NumberImagination
 
             int result = 0;
 
-            for (int i = 0; i < mValue.Length; i++)
+            if (BitIsLess(Sign, comparableСode.Sign))
+                return 1;
+
+            if (BitIsGreater(Sign, comparableСode.Sign))
+                return -1;
+
+            for (int i = mValue.Length - 2; i >= 0; i--)
             {
                 if (BitIsGreater(mValue[i], comparableСode.mValue[i]))
                     result = 1;
