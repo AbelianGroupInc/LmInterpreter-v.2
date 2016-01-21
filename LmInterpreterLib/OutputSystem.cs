@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LmInterpreterLib
 {
     public class OutputSystem
     {
-        private List<IOutputField> mOutputField;
+        private List<IOutputField> mOutputField = new List<IOutputField>();
 
         public void Add(IOutputField outputField)
         {
