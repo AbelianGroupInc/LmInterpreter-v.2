@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LmInterpreterLib
 {
-    interface IInputSystem
+    public interface IInputSystem
     {
         string GetBuffer();
         void Write(string buffer);

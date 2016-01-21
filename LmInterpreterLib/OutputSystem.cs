@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LmInterpreterLib
 {
-    class OutputSystem
+    public class OutputSystem
     {
         private List<IOutputField> mOutputField;
 

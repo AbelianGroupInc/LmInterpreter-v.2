@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LmInterpreterLib
 {
-    public interface IOutputField
+    public interface IMemoryOrganisation
     {
-        void Clear();
-        void Write(string buffer);
+        string GetAddressValue();
+        Dictionary<string, string> GetWholeMemory();
     }
 }
