@@ -19,9 +19,12 @@ namespace NumberImagination.ConverterLib
 
             number = Converter.Convert(new DecToSTDConverter(2), number);
 
-            ComplementCode complCodeRepresentation = new ComplementCode(number);
+            ComplementCode complCodeRepresentation = new ComplementCode(number.Length, GetMantissa(number));
 
-            throw new NotImplementedException();
+            if (IsMinusNumber(number))
+                complCodeRepresentation = -complCodeRepresentation;
+
+            return complCodeRepresentation.ToString();
         }
     }
 }
