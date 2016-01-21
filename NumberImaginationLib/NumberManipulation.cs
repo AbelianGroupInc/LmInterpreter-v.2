@@ -5,24 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace NumberImagination.ConverterLib
+namespace NumberImagination
 {
-    public abstract class FromDecNumberConverter : IFromDecNumberConverter
+    public static class NumberManipulation
     {
-        protected void CheckNumberCorrectness(string number)
+        public static readonly char cMinusSign = '1';
+        public static readonly char cPlusSign = '0';
+        public static void CheckNumberCorrectness(string number)
         {
             Regex decNumbRegExp = new Regex(@"^-?[0-9]+$");
             if (!decNumbRegExp.IsMatch(number))
-                throw new ConverterException(ConverterExceptions.InvalidDecNumber);
+                throw new NumberImaginationException(NumberImaginationExceptions.InvalidNumber);
         }
-        public abstract string Convert(string number);
-        
-        public bool IsMinusNumber(string number)
+
+        public static bool IsMinusNumber(string number)
         {
             return number.First() == '-' ? true : false;
         }
 
-        public string GetMantissa(string number)
+        public static string GetCommonNumberMantissa(string number)
         {
             string mantiss = String.Empty;
             if (IsMinusNumber(number))
@@ -36,8 +37,14 @@ namespace NumberImagination.ConverterLib
             return mantiss;
         }
 
+        public static string GetNumberCodeMantissa(string code)
+        {
+            // 1 - is the beginning of code mantissa
+            return code.Substring(1, code.Length - 1);
+        }
+
         // Returns number with added nonsignificant zeroes
-        public string AddNonsignificantZeroes(string number, int newBitCapacity)
+        public static string AddNonsignificantZeroes(string number, int newBitCapacity)
         {
             TestForBitCapacity(number, newBitCapacity);
 
@@ -45,10 +52,10 @@ namespace NumberImagination.ConverterLib
 
             return zeroes + number;
         }
-        public void TestForBitCapacity(string number, int newBitCapacity)
+        public static void TestForBitCapacity(string number, int newBitCapacity)
         {
             if (newBitCapacity <= number.Length)
-                throw new ConverterException(ConverterExceptions.InvalidBitCapacity);
+                throw new NumberImaginationException(NumberImaginationExceptions.InvalidBitCapacity);
         }
     }
 }

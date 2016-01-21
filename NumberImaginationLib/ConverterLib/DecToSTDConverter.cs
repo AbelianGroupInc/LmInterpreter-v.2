@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace NumberImagination.ConverterLib
 {
-    public class DecToSTDConverter : FromDecNumberConverter
+    public class DecToSTDConverter : IFromDecNumberConverter
     {
         private int mToNumericalSystem;
         // Takes as a parametr cur numerical system in which is needed to convert
@@ -22,14 +22,14 @@ namespace NumberImagination.ConverterLib
             if (toNumericalSystem > 32 || toNumericalSystem <= 1)
                 throw new ConverterException(ConverterExceptions.InvalidNumaricalSystem);
         }
-        public override string Convert(string number)
+        public string Convert(string number)
         {
-            CheckNumberCorrectness(number);
+            NumberManipulation.CheckNumberCorrectness(number);
 
-            BigInteger convertatingNumber = BigInteger.Parse(GetMantissa(number),
+            BigInteger convertatingNumber = BigInteger.Parse(NumberManipulation.GetCommonNumberMantissa(number),
                 System.Globalization.NumberStyles.AllowLeadingSign);
 
-            return IsMinusNumber(number) ? 
+            return NumberManipulation.IsMinusNumber(number) ? 
                 '-' + DoConvert(convertatingNumber) : 
                 DoConvert(convertatingNumber);
         }

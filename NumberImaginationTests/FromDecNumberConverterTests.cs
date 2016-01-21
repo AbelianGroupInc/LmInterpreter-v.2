@@ -1,5 +1,6 @@
 ﻿using System;
 using NumberImagination.ConverterLib;
+using NumberImagination;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // Tests for Converter
@@ -9,11 +10,11 @@ namespace ConverterTests
     public class FromDecNumberConverterTests
     {
         [TestMethod]
-        [ExpectedException(typeof(ConverterException),
-    "Входящая строка не является десятичным числом")]
+        [ExpectedException(typeof(NumberImaginationException),
+    "Неправильное представление числа")]
         public void TestForDecNumberCorrectness()
         {
-            NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(),
+            NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(5),
                 "412b578");
         }
 
@@ -51,24 +52,33 @@ namespace ConverterTests
         [TestMethod]
         public void TestForConvertationToComplementCode()
         {
-            Assert.AreEqual("1000",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(), "8"));
+            Assert.AreEqual("01000",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(5), "8"));
 
             Assert.AreEqual("101100101101",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(), "-1235"));
+                NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(12), "-1235"));
+        }
+        [TestMethod]
+        public void TestForConvertationToSignedMagnitude()
+        {
+            Assert.AreEqual("01000",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToSignedMagnitude(5), "8"));
+
+            Assert.AreEqual("110011010011",
+                NumberImagination.ConverterLib.Converter.Convert(new DecToSignedMagnitude(12), "-1235"));
         }
         [TestMethod]
         public void TestForNonsignificantZeroes()
         {
             Assert.AreEqual("00005",
-                new DecToSTDConverter(5).AddNonsignificantZeroes("5", 5));
+                NumberManipulation.AddNonsignificantZeroes("5", 5));
         }
         [TestMethod]
-        [ExpectedException(typeof(ConverterException),
+        [ExpectedException(typeof(NumberImaginationException),
     "Неправильно указанная разрядность числа")]
         public void TestForNonsignificantZeroesException()
         {
-            new DecToSTDConverter(5).AddNonsignificantZeroes("500", 2);
+            NumberManipulation.AddNonsignificantZeroes("500", 2);
         }
     }
 }
