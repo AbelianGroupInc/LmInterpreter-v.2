@@ -19,7 +19,7 @@ namespace ConverterTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ConverterException),
+        [ExpectedException(typeof(NumberImaginationException),
     "Неправильно указанная система счисления")]
         public void TestForNumericalSystemException()
         {

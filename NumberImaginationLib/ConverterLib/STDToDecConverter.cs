@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace NumberImagination.ConverterLib
 {
@@ -19,11 +20,21 @@ namespace NumberImagination.ConverterLib
         }
         public string Convert(string number)
         {
+            const int cFirstNumberIndex = 0;
+
             NumberManipulation.CheckNumberCorrectness(number, mFromNumericalSystem);
 
-            // Convertation
+            string convertatingNumber = NumberManipulation.GetCommonNumberMantissa(number);
 
+             return NumberManipulation.IsMinusNumber(number) ?
+                 '-' + DoConvertation(convertatingNumber, cFirstNumberIndex) :
+                 DoConvertation(convertatingNumber, cFirstNumberIndex);
+        }
+
+        private string DoConvertation(string number, int curNumberIndex)
+        {
             throw new NotImplementedException();
+
         }
     }
 }
