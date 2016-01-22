@@ -36,6 +36,11 @@ namespace NumberImagination
             return number.First() == '-' ? true : false;
         }
 
+        public static bool IsCodeMinusNumber(string number)
+        {
+            return number.First() == cMinusSign ? true : false;
+        }
+
         public static string GetCommonNumberMantissa(string number)
         {
             string mantiss = String.Empty;

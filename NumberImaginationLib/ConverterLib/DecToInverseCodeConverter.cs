@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NumberImagination.ConverterLib
 {
-    public class DecToInversCodeConverter : IFromDecNumberConverter
+    public class DecToInverseCodeConverter : IFromDecNumberConverter
     {
         // Takes as a parametr digital capacity in which is needed to represent resulting code
         private int mBitCapacity;
-        public DecToInversCodeConverter(int bitCapacity) 
+        public DecToInverseCodeConverter(int bitCapacity) 
         { 
             if(bitCapacity <= 0)
                 throw new ConverterException(ConverterExceptions.InvalidBitCapacity);
@@ -24,27 +24,30 @@ namespace NumberImagination.ConverterLib
 
             string binRepresentation = Converter.Convert(new DecToSTDConverter(2), number);
 
-            StringBuilder inversCode = new StringBuilder(NumberManipulation.AddNonsignificantZeroes(
+            string inverseCode = NumberManipulation.AddNonsignificantZeroes(
                 NumberManipulation.GetCommonNumberMantissa(binRepresentation), 
-                mBitCapacity));
+                mBitCapacity);
 
             if (NumberManipulation.IsMinusNumber(binRepresentation))
-                InverseMantissaBits(inversCode);
+                inverseCode = InverseMantissaBits(inverseCode);
 
 
-            return inversCode.ToString();
+            return inverseCode.ToString();
         }
 
-        private static void InverseMantissaBits(StringBuilder inversCode)
+        private static string InverseMantissaBits(string inverseCode)
         {
+            StringBuilder resultingNumber = new StringBuilder(inverseCode);
             // i = 1 - beginning of a mantissa
-            for (int i = 0; i < inversCode.Length; i++)
+            for (int i = 0; i < inverseCode.Length; i++)
             {
-                if (inversCode[i] == NumberManipulation.cMinusSign)
-                    inversCode[i] = NumberManipulation.cPlusSign;
+                if (resultingNumber[i] == NumberManipulation.cMinusSign)
+                    resultingNumber[i] = NumberManipulation.cPlusSign;
                 else
-                    inversCode[i] = NumberManipulation.cMinusSign;
+                    resultingNumber[i] = NumberManipulation.cMinusSign;
             }
+
+            return resultingNumber.ToString();
         }
     }
 }

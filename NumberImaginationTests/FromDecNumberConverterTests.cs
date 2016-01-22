@@ -17,7 +17,12 @@ namespace ConverterTests
             NumberImagination.ConverterLib.Converter.Convert(new DecToComplCodeConverter(5),
                 "412b578");
         }
-
+        [TestMethod]
+        public void TestForDecNumberCorrectness2()
+        {
+            NumberImagination.ConverterLib.Converter.Convert(new STDToDecConverter(15),
+                "412b578");
+        }
         [TestMethod]
         [ExpectedException(typeof(NumberImaginationException),
     "Неправильно указанная система счисления")]
@@ -40,14 +45,15 @@ namespace ConverterTests
 
             Assert.AreEqual("-52C",
                 NumberImagination.ConverterLib.Converter.Convert(new DecToSTDConverter(16), "-1324"));
+
         }
         [TestMethod]
-        public void TestForConvertationToInversCode()
+        public void TestForConvertationToInverseCode()
         {
             Assert.AreEqual("01000",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(5), "8"));
+                NumberImagination.ConverterLib.Converter.Convert(new DecToInverseCodeConverter(5), "8"));
             Assert.AreEqual("111110000100",
-                NumberImagination.ConverterLib.Converter.Convert(new DecToInversCodeConverter(12), "-123"));
+                NumberImagination.ConverterLib.Converter.Convert(new DecToInverseCodeConverter(12), "-123"));
         }
         [TestMethod]
         public void TestForConvertationToComplementCode()

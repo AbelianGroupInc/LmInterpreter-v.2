@@ -27,14 +27,17 @@ namespace NumberImagination.ConverterLib
             string convertatingNumber = NumberManipulation.GetCommonNumberMantissa(number);
 
              return NumberManipulation.IsMinusNumber(number) ?
-                 '-' + DoConvertation(convertatingNumber, cFirstNumberIndex) :
-                 DoConvertation(convertatingNumber, cFirstNumberIndex);
+                 '-' + DoConvertation(convertatingNumber, cFirstNumberIndex).ToString() :
+                 DoConvertation(convertatingNumber, cFirstNumberIndex).ToString();
         }
 
-        private string DoConvertation(string number, int curNumberIndex)
+        private BigInteger DoConvertation(string number, int curNumberIndex)
         {
-            throw new NotImplementedException();
-
+            return curNumberIndex < number.Length ?
+                NumberManipulation.GetNumeralFromSignRepresentation(number[curNumberIndex]) *
+                (int)(Math.Pow((double)mFromNumericalSystem, number.Length - 1 - curNumberIndex)) +
+                DoConvertation(number, curNumberIndex + 1) :
+                0;
         }
     }
 }
