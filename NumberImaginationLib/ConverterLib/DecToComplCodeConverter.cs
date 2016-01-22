@@ -23,7 +23,7 @@ namespace NumberImagination.ConverterLib
         }
         public string Convert(string number)
         {
-            NumberManipulation.CheckNumberCorrectness(number);
+            NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cDecNumberSystem);
 
             number = Converter.Convert(new DecToSTDConverter(2), number);
 

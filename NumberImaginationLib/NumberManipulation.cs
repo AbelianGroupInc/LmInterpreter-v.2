@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Numerics;
 
 namespace NumberImagination
 {
@@ -11,9 +12,12 @@ namespace NumberImagination
     {
         public static readonly char cMinusSign = '1';
         public static readonly char cPlusSign = '0';
-        public static void CheckNumberCorrectness(string number)
+        public static readonly int cDecNumberSystem = 10;
+        public static readonly int cBinNumberSystem = 2;
+        public static void CheckNumberCorrectness(string number, int baseSystem)
         {
-            Regex decNumbRegExp = new Regex(@"^-?[0-9]+$");
+            char numSystemLastNumeral = GetNumeralRepresentation(baseSystem - 1);
+            Regex decNumbRegExp = new Regex(@"^-?[0-" + numSystemLastNumeral + "]+$");
             if (!decNumbRegExp.IsMatch(number))
                 throw new NumberImaginationException(NumberImaginationExceptions.InvalidNumber);
         }
@@ -56,6 +60,21 @@ namespace NumberImagination
         {
             if (newBitCapacity <= number.Length)
                 throw new NumberImaginationException(NumberImaginationExceptions.InvalidBitCapacity);
+        }
+
+        // Represent decimal numeral into imagination of new numerical system numeral
+        public static char GetNumeralRepresentation(BigInteger decNumber)
+        {
+            if (decNumber > 9)
+                return (char)((decNumber - 10) + (int)'A');
+            else
+                return (char)(decNumber + (int)'0');
+        }
+
+        public static void TestForNumericalSystemCorrectness(int numericalSystem)
+        {
+            if (numericalSystem > 32 || numericalSystem <= 1)
+                throw new NumberImaginationException(NumberImaginationExceptions.InvalidNumaricalSystem);
         }
     }
 }

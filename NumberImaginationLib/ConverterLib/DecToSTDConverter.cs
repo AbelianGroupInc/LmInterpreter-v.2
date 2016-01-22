@@ -13,44 +13,30 @@ namespace NumberImagination.ConverterLib
         // Takes as a parametr cur numerical system in which is needed to convert
         public DecToSTDConverter(int toNumericalSystem)
         {
-            TestForNumericalSystemCorrectness(toNumericalSystem);
+            NumberManipulation.TestForNumericalSystemCorrectness(toNumericalSystem);
 
             mToNumericalSystem = toNumericalSystem;
         }
-        private void TestForNumericalSystemCorrectness(int toNumericalSystem)
-        {
-            if (toNumericalSystem > 32 || toNumericalSystem <= 1)
-                throw new ConverterException(ConverterExceptions.InvalidNumaricalSystem);
-        }
         public string Convert(string number)
         {
-            NumberManipulation.CheckNumberCorrectness(number);
+            NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cDecNumberSystem);
 
             BigInteger convertatingNumber = BigInteger.Parse(NumberManipulation.GetCommonNumberMantissa(number),
                 System.Globalization.NumberStyles.AllowLeadingSign);
 
             return NumberManipulation.IsMinusNumber(number) ? 
-                '-' + DoConvert(convertatingNumber) : 
-                DoConvert(convertatingNumber);
+                '-' + DoConvertation(convertatingNumber) : 
+                DoConvertation(convertatingNumber);
         }
 
         // Implements convertation algorithm
-        private string DoConvert(BigInteger decNumber)
+        private string DoConvertation(BigInteger decNumber)
         {
             if (decNumber != 0)
-                return DoConvert(decNumber / mToNumericalSystem) +
-                    GetNewNumeralRepresentation(decNumber % mToNumericalSystem);
+                return DoConvertation(decNumber / mToNumericalSystem) +
+                    NumberManipulation.GetNumeralRepresentation(decNumber % mToNumericalSystem);
             else
                 return String.Empty;
-        }
-
-        // Represent decimal numeral into imagination of new numerical system numeral
-        private char GetNewNumeralRepresentation(BigInteger decNumber)
-        {
-            if (decNumber > 9)
-                return (char)((decNumber - 10) + (int)'A');
-            else
-                return (char)(decNumber + (int)'0');
         }
     }
 }

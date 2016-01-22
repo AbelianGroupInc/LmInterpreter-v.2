@@ -20,7 +20,7 @@ namespace NumberImagination.ConverterLib
 
         public string Convert(string number)
         {
-            NumberManipulation.CheckNumberCorrectness(number);
+            NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cDecNumberSystem);
 
             string binRepresentation = Converter.Convert(new DecToSTDConverter(2), number);
 

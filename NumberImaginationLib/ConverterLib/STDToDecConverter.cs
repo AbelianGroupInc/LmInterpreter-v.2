@@ -6,19 +6,23 @@ using System.Threading.Tasks;
 
 namespace NumberImagination.ConverterLib
 {
-    class STDToDecConverter : ToDecNumberConverter
+    public class STDToDecConverter : IToDecNumberConverter
     {
         private int mFromNumericalSystem;
 
         // Takes as a parametr numerical system from which is needed to convert
         public STDToDecConverter(int fromNumericalSystem)
         {
-            TestForNumericalSystemCorrectness(fromNumericalSystem);
+            NumberManipulation.TestForNumericalSystemCorrectness(fromNumericalSystem);
 
             mFromNumericalSystem = fromNumericalSystem;
         }
-        public override string Convert(string number)
+        public string Convert(string number)
         {
+            NumberManipulation.CheckNumberCorrectness(number, mFromNumericalSystem);
+
+            // Convertation
+
             throw new NotImplementedException();
         }
     }

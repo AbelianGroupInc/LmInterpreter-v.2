@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace NumberImagination.ConverterLib
 {
-    class InversCodeToDecConverter : ToDecNumberConverter
+    public class InversCodeToDecConverter : IToDecNumberConverter
     {
         private int mFromNumericalSystem;
 
         public InversCodeToDecConverter(int fromNumericalSystem)
         {
-            TestForNumericalSystemCorrectness(fromNumericalSystem);
+            NumberManipulation.TestForNumericalSystemCorrectness(fromNumericalSystem);
 
             mFromNumericalSystem = fromNumericalSystem;
         }
-        public override string Convert(string number)
+        public string Convert(string number)
         {
             throw new NotImplementedException();
         }
