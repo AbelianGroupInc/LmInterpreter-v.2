@@ -14,8 +14,8 @@ namespace NumberImagination.ConverterLib
     // 3) Result will be returned in the string type
     public static class Converter
     {
-        public static string Convert(IFromDecNumberConverter converterToDec,
-            IToDecNumberConverter converterFromDec,
+        public static string Convert(IToDecNumberConverter converterToDec,
+            IFromDecNumberConverter converterFromDec,
             string numb)
         {
             numb = converterToDec.Convert(numb);
@@ -23,12 +23,12 @@ namespace NumberImagination.ConverterLib
 
             return numb;
         }
-        public static string Convert(IFromDecNumberConverter converterFromDec,
+        public static string ConvertFromDecNumber(IFromDecNumberConverter converterFromDec,
             string numb)
         {
             return converterFromDec.Convert(numb);
         }
-        public static string Convert(IToDecNumberConverter converterToDec,
+        public static string ConvertToDecNumber(IToDecNumberConverter converterToDec,
             string numb)
         {
             return converterToDec.Convert(numb);

@@ -7,11 +7,11 @@ using System.Numerics;
 
 namespace NumberImagination.ConverterLib
 {
-    public class DecToSTDConverter : IFromDecNumberConverter
+    public class ToSTDConverter : IFromDecNumberConverter
     {
         private int mToNumericalSystem;
         // Takes as a parametr cur numerical system in which is needed to convert
-        public DecToSTDConverter(int toNumericalSystem)
+        public ToSTDConverter(int toNumericalSystem)
         {
             NumberManipulation.TestForNumericalSystemCorrectness(toNumericalSystem);
 

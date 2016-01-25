@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NumberImagination.ConverterLib
 {
-    public class DecToInverseCodeConverter : IFromDecNumberConverter
+    public class ToInverseCodeConverter : IFromDecNumberConverter
     {
         // Takes as a parametr digital capacity in which is needed to represent resulting code
         private int mBitCapacity;
-        public DecToInverseCodeConverter(int bitCapacity) 
+        public ToInverseCodeConverter(int bitCapacity) 
         { 
             if(bitCapacity <= 0)
                 throw new ConverterException(ConverterExceptions.InvalidBitCapacity);
@@ -22,7 +22,7 @@ namespace NumberImagination.ConverterLib
         {
             NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cDecNumberSystem);
 
-            string binRepresentation = Converter.Convert(new DecToSTDConverter(2), number);
+            string binRepresentation = Converter.ConvertFromDecNumber(new ToSTDConverter(2), number);
 
             string inverseCode = NumberManipulation.AddNonsignificantZeroes(
                 NumberManipulation.GetCommonNumberMantissa(binRepresentation), 

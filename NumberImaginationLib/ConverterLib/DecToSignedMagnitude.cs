@@ -21,7 +21,7 @@ namespace NumberImagination.ConverterLib
         {
             NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cDecNumberSystem);
 
-            number = Converter.Convert(new DecToSTDConverter(2), number);
+            number = Converter.ConvertFromDecNumber(new ToSTDConverter(NumberManipulation.cBinNumberSystem), number);
 
             StringBuilder signedMagnitude = new StringBuilder(
                 NumberManipulation.AddNonsignificantZeroes(
