@@ -3,34 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearningMachineLib;
+using LmInterpreterLib;
 
 namespace LearningMachine3
 {
     // Memory organisation of LM 3
-    class LM3Memory
+    class LM3Memory : IMemoryOrganisation
     {
         private int cLM3MemoryVolume = 65536;
-        private List<IMemoryCell> mMemoryCellList;
+        private Dictionary<string, IMemoryCell> mMemoryCellList;
+
+        public Dictionary<string, Object> MemoryCellList
+        {
+            get
+            {
+                return GetMemoryObjectDictionary();
+            }
+        }
 
         public LM3Memory()
         {
-            mMemoryCellList = new List<IMemoryCell>(cLM3MemoryVolume);
+            mMemoryCellList = new Dictionary<string, IMemoryCell>(cLM3MemoryVolume);
             
             for(int i = 0; i < cLM3MemoryVolume; i++)
-                mMemoryCellList.Add(new EmptyCell());
+                mMemoryCellList.Add(i.ToString(), new EmptyCell());
         }
 
-        public IMemoryCell GetCellByAddress(int address)
+        public Object GetCellByAddress(string address)
         {
-            throw new NotImplementedException();
-            // Need to add test for adderss correctness
+            TestForAddressCorrectness(address);
 
             return mMemoryCellList[address];
         }
-
-        public List<IMemoryCell> GetWholeMemory()
+        public void SetCellByAddress(string address, IMemoryCell cellContent)
         {
-            return mMemoryCellList;
+            TestForAddressCorrectness(address);
+
+            mMemoryCellList[address] = cellContent;
+        }
+
+        public void TestForAddressCorrectness(string address)
+        {
+            if (Convert.ToInt32(address) < 0 || Convert.ToInt32(address) >= cLM3MemoryVolume)
+                throw new MemoryException(MemoryExceptionsMessages.MemoryBoundsViolation);
+        }
+
+        private Dictionary<string, Object> GetMemoryObjectDictionary()
+        {
+            Dictionary<string, Object> resultingDictionary = new Dictionary<string,object>(cLM3MemoryVolume);
+
+            foreach (var cell in mMemoryCellList)
+                resultingDictionary.Add(cell.Key, cell.Value);
+
+            return resultingDictionary;
         }
     }
 }

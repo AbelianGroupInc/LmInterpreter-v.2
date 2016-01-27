@@ -3,29 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearningMachineLib;
+using LmInterpreterLib;
 
 namespace LearningMachine3
 {
     // Implementation of Learning machine 3
-    class LearningMachine3
+    class LearningMachine3 : STDLearningMachine
     {
-        // Lm3 memory
+        private LM3Memory mLM3Memory;
 
-        public void Execute()
+        public LearningMachine3()
+        {
+            mLM3Memory = new LM3Memory();
+        }
+
+        public override void Execute()
         {
             throw new NotImplementedException();
         }
 
         //Need parametr - program
-        public void Fill()
+        public override void Fill(string program)
         {
             throw new NotImplementedException();
         }
 
         // Returns IMemoryOrganisation
-        public void GetMemorySection()
+        public override IMemoryOrganisation GetMemorySection()
         {
-            throw new NotImplementedException();
+            return mLM3Memory;
         }
     }
 }

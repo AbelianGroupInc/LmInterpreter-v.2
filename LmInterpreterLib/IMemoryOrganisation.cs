@@ -4,7 +4,12 @@ namespace LmInterpreterLib
 {
     public interface IMemoryOrganisation
     {
-        string GetAddressValue();
-        Dictionary<string, string> GetWholeMemory();
+        // Apealing by address represented in hex number
+        object GetCellByAddress(string address);
+
+        Dictionary<string, object> MemoryCellList
+        {
+            get;
+        }
     }
 }
