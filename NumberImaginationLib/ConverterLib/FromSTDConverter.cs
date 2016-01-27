@@ -25,17 +25,18 @@ namespace NumberImagination.ConverterLib
             NumberManipulation.CheckNumberCorrectness(number, mFromNumericalSystem);
 
             string convertatingNumber = NumberManipulation.GetCommonNumberMantissa(number);
+            convertatingNumber = DoConvertation(convertatingNumber, cFirstNumberIndex).ToString();
 
              return NumberManipulation.IsMinusNumber(number) ?
-                 '-' + DoConvertation(convertatingNumber, cFirstNumberIndex).ToString() :
-                 DoConvertation(convertatingNumber, cFirstNumberIndex).ToString();
+                 '-' + convertatingNumber :
+                 convertatingNumber;
         }
 
         private BigInteger DoConvertation(string number, int curNumberIndex)
         {
             return curNumberIndex < number.Length ?
                 NumberManipulation.GetNumeralFromSignRepresentation(number[curNumberIndex]) *
-                (int)(Math.Pow((double)mFromNumericalSystem, number.Length - 1 - curNumberIndex)) +
+                BigInteger.Pow(mFromNumericalSystem, number.Length - 1 - curNumberIndex) +
                 DoConvertation(number, curNumberIndex + 1) :
                 0;
         }
