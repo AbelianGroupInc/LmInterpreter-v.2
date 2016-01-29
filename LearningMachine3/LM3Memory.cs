@@ -9,7 +9,7 @@ using LmInterpreterLib;
 namespace LearningMachine3
 {
     // Memory organisation of LM 3
-    class LM3Memory : IMemoryOrganisation
+    public class LM3Memory : IMemoryOrganisation
     {
         private int cLM3MemoryVolume = 65536;
         private Dictionary<string, IMemoryCell> mMemoryCellList;
@@ -30,9 +30,11 @@ namespace LearningMachine3
                 mMemoryCellList.Add(i.ToString(), new EmptyCell());
         }
 
-        public Object GetCellByAddress(string address)
+        public object GetCellByAddress(string address)
         {
             TestForAddressCorrectness(address);
+
+            TestForCellEmptyness(address);
 
             return mMemoryCellList[address];
         }
@@ -47,6 +49,12 @@ namespace LearningMachine3
         {
             if (Convert.ToInt32(address) < 0 || Convert.ToInt32(address) >= cLM3MemoryVolume)
                 throw new MemoryException(MemoryExceptionsMessages.MemoryBoundsViolation);
+        }
+
+        public void TestForCellEmptyness(string address)
+        {
+            if (mMemoryCellList[address] is EmptyCell)
+                throw new MemoryException(MemoryExceptionsMessages.AccessToUninitializedAddress);
         }
 
         private Dictionary<string, Object> GetMemoryObjectDictionary()

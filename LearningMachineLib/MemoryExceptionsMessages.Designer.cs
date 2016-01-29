@@ -61,6 +61,15 @@ namespace LearningMachineLib {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Обращение по неинициализированному адресу.
+        /// </summary>
+        public static string AccessToUninitializedAddress {
+            get {
+                return ResourceManager.GetString("AccessToUninitializedAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выход за пределы памяти.
         /// </summary>
         public static string MemoryBoundsViolation {

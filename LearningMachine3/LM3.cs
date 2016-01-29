@@ -9,11 +9,11 @@ using LmInterpreterLib;
 namespace LearningMachine3
 {
     // Implementation of Learning machine 3
-    class LearningMachine3 : STDLearningMachine
+    public class LM3 : STDLearningMachine
     {
         private LM3Memory mLM3Memory;
 
-        public LearningMachine3()
+        public LM3()
         {
             mLM3Memory = new LM3Memory();
         }

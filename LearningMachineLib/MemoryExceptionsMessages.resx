@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccessToUninitializedAddress" xml:space="preserve">
+    <value>Обращение по неинициализированному адресу</value>
+  </data>
   <data name="MemoryBoundsViolation" xml:space="preserve">
     <value>Выход за пределы памяти</value>
   </data>

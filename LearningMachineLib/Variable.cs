@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LearningMachineLib
 {
     // Stub
-    public class Viariable : IMemoryCell
+    public class Variable : IMemoryCell
     {
     }
 }
