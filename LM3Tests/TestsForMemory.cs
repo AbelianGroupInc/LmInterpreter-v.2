@@ -45,7 +45,7 @@ namespace LM3Tests
             LM3 aLM3 = new LM3();
             Variable aVariable = new Variable();
 
-            ((LM3Memory)(aLM3.GetMemorySection())).SetCellByAddress("213", aVariable);
+            aLM3.SetCellByAddress("213", aVariable);
 
             Assert.AreSame(aVariable, aLM3.GetMemorySection().GetCellByAddress("213"));
         }

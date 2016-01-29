@@ -32,7 +32,12 @@ namespace LearningMachine3
         // Returns IMemoryOrganisation
         public override IMemoryOrganisation GetMemorySection()
         {
-            return mLM3Memory;
+            return new LM3MemoryToIMemoryOrganisation(mLM3Memory);
+        }
+
+        public void SetCellByAddress(string address, IMemoryCell cell)
+        {
+            mLM3Memory.SetCellByAddress(address, cell);
         }
     }
 }
