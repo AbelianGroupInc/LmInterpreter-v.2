@@ -10,5 +10,19 @@ namespace LearningMachineLib
     // Stub
     public abstract class LMCommand : IMemoryCell
     {
+        private int mCommandNumber;
+
+        public LMCommand(int commandNumber)
+        {
+            mCommandNumber = commandNumber;
+        }
+
+        public int CommandNumber 
+        {
+            get
+            {
+                return mCommandNumber;
+            }
+        }
     }
 }
