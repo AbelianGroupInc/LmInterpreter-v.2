@@ -6,8 +6,8 @@ namespace NumberImagination
 {
     public class ComplementCode : IComparable
     {
-        private static char cTrueSymbol  = '1';
-        private static char cFalseSymbol = '0';
+        private static readonly char cTrueSymbol  = '1';
+        private static readonly char cFalseSymbol = '0';
 
         private bool[] mValue;
         private int mBitCapacity;
