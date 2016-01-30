@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LearningMachineLib
 {
-    interface IProgramCreator
+    public interface IProgramCreator
     {
-        void Create();
+        void Create(string path);
     }
 }
