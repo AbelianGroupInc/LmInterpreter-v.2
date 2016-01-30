@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LearningMachineLib;
-using LmInterpreterLib;
 
-namespace LearningMachine3
+namespace LearningMachineLib.LearningMachine3
 {
     // Memory organisation of LM 3
     public class LM3Memory

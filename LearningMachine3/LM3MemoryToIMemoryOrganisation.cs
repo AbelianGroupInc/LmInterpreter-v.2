@@ -1,11 +1,7 @@
 ﻿using LmInterpreterLib;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LearningMachine3
+namespace LearningMachineLib.LearningMachine3
 {
     class LM3MemoryToIMemoryOrganisation : IMemoryOrganisation
     {

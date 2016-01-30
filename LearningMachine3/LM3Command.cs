@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LearningMachineLib;
 
-namespace LearningMachine3
+namespace LearningMachineLib.LearningMachine3
 {
     class LM3Command : LMCommand
     {
@@ -34,11 +34,11 @@ namespace LearningMachine3
                 return mA2;
             }
         }
-        public int A2
+        public int A3
         {
             get
             {
-                return mA2;
+                return mA3;
             }
         }
 
