@@ -5,19 +5,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
+using NumberImagination;
+using NumberImagination.ConverterLib;
 
 namespace LearningMachineLib
 {
     public class Variable : IMemoryCell
     {
-        private BigInteger mValue;
+        private BigInteger cLM3BitCapacity = BigInteger.Pow(2, 56);
+        private ComplementCode mValue;
 
-        public Variable(BigInteger value)
+        public Variable(string value)
         {
-            mValue = value;
+            string decRepresentationString = Converter.ConvertToDecNumber(new FromSTDConverter(10), value);
+            BigInteger decRepresentationBigInt = BigInteger.Parse(decRepresentationString,
+                System.Globalization.NumberStyles.AllowLeadingSign);
+
+            decRepresentationBigInt = decRepresentationBigInt % cLM3BitCapacity;
+
+            ComplementCode complRepresentation = new ComplementCode(
+                Converter.Convert(new FromSTDConverter(10), new ToComplCodeConverter(56), decRepresentationBigInt.ToString()));
+
+            mValue = complRepresentation;
         }
 
-        public BigInteger Value
+        public ComplementCode Value
         {
             get
             {
