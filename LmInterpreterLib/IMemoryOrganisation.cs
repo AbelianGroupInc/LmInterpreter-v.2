@@ -5,9 +5,9 @@ namespace LmInterpreterLib
     public interface IMemoryOrganisation
     {
         // Apealing by address represented in hex number
-        object GetCellByAddress(string address);
+        IMemoryCell GetCellByAddress(string address);
 
-        Dictionary<string, object> MemoryCellList
+        Dictionary<string, IMemoryCell> MemoryCellList
         {
             get;
         }
