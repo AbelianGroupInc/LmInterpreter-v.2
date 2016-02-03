@@ -67,7 +67,7 @@ namespace LearningMachineLib.LearningMachine3
         public void SendVariable(XElement address, XElement var)
         {
             mMemoryFiller.AddVariable(address.Attribute(LM3ProgramXMLCreatorTags.Value).Value, 
-                var.Attribute(LM3ProgramXMLCreatorTags.Variable).Value);
+                var.Attribute(LM3ProgramXMLCreatorTags.Value).Value);
         }
 
         public void SendCommand(XElement address, XElement var)

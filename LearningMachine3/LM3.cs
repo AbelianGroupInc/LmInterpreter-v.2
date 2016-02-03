@@ -7,9 +7,8 @@ namespace LearningMachineLib.LearningMachine3
     public class LM3 : STDLearningMachine
     {
         private LM3Memory mLM3Memory;
-        
 
-        public LM3(string programPath)
+        public LM3(string programPath) : base(programPath)
         {
             mLM3Memory = new LM3Memory();
         }

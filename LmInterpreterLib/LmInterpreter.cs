@@ -11,7 +11,7 @@ namespace LmInterpreterLib
         LearningMachine mLearningMachine;
         IParser mParser;
 
-        LmInterpreter(IParser parser, LearningMachine learningMachine)
+        public LmInterpreter(IParser parser, LearningMachine learningMachine)
         {
             mParser = parser;
             mLearningMachine = learningMachine;

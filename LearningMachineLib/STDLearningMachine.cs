@@ -12,6 +12,11 @@ namespace LearningMachineLib
         protected int currentAddress;
         protected string mProgramPath;
 
+        public STDLearningMachine(string programPath)
+        {
+            mProgramPath = programPath;
+        }
+
         // Executor
 
         // ProgramLoader
