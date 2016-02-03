@@ -13,17 +13,12 @@ namespace LearningMachine2
     {
         // LM2 Memory
 
-        public LM2()
+        public LM2(string programPath) : base (programPath)
         {
             // LM2 Memory initialization
         }
 
         public override void Execute()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Fill(string program)
         {
             throw new NotImplementedException();
         }
@@ -34,6 +29,11 @@ namespace LearningMachine2
         }
 
         public void SetCellByAddress(string address, IMemoryCell cell)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Fill()
         {
             throw new NotImplementedException();
         }
