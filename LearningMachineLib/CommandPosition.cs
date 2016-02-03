@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningMachineLib
 {
-    public class CommandPosition
+    public class CommandPosition : ICommandPosition
     {
         private int mLine;
         private int mStartColumn;

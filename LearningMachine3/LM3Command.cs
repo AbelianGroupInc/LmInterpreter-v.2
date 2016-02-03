@@ -13,7 +13,7 @@ namespace LearningMachineLib.LearningMachine3
         private int mA2;
         private int mA3;
 
-        public LM3Command(int cmd, int a1, int a2, int a3) : base(cmd)
+        public LM3Command(string cmd, int a1, int a2, int a3) : base(cmd)
         {
             mA1 = a1;
             mA2 = a2;
