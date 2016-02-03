@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Diagnostics.CodeAnalysis;
 
+using QUT;
 using QUT.Gppg;
 using System.Linq;
 using LM3SyntaxScanner;
