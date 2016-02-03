@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Numerics;
 using LearningMachineLib;
 using LearningMachine3;
+using LearningMachineLib.LearningMachine3;
 
 
 namespace LM3Tests
@@ -43,7 +45,7 @@ namespace LM3Tests
         public void TestForAppealingByAddress2()
         {
             LM3 aLM3 = new LM3();
-            Variable aVariable = new Variable();
+            Variable aVariable = new Variable(new BigInteger(23).ToString());
 
             aLM3.SetCellByAddress("213", aVariable);
 
