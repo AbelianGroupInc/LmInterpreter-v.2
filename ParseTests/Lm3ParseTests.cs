@@ -2,6 +2,7 @@
 using System.IO;
 using LearningMachineLib;
 using LearningMachineLib.LearningMachine3;
+using LmInterpreterLib;
 
 namespace ParseTests
 {
@@ -19,6 +20,17 @@ namespace ParseTests
 
             string testOutput = new StreamReader(@"../../../ParseTests\TextFiles\testOutput.txt").ReadToEnd();
             Assert.AreEqual(output, testOutput);
+        }
+
+        [TestMethod]
+        public void ParseTest2()
+        {
+            string path = @"../../../ParseTests\TextFiles\output.txt";
+
+            LmInterpreter machine = new LmInterpreter(new LM3Parser(path), new LM3(path));
+
+            string input = new StreamReader(@"../../../ParseTests\TextFiles\input.txt").ReadToEnd();
+            machine.Read(input);
         }
     }
 }

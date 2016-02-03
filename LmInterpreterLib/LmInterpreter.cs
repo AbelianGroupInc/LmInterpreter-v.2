@@ -10,15 +10,24 @@ namespace LmInterpreterLib
     {
         LearningMachine mLearningMachine;
         IParser mParser;
-        string program;
+
+        public LmInterpreter(IParser parser, LearningMachine learningMachine)
+        {
+            mParser = parser;
+            mLearningMachine = learningMachine;
+        }
 
         public void Execute()
         {
             mLearningMachine.Execute();
         }
+
         public void Read(string program)
         {
+            //  разбор программы
             mParser.Parse(program);
+            // заполнение памяти 
+            mLearningMachine.Fill();
         }
     }
 }

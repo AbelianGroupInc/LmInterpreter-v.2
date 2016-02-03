@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LM3Scanners
+namespace QUT
 {
     public class SyntaxException : Exception
     {
