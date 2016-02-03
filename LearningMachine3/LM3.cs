@@ -7,8 +7,9 @@ namespace LearningMachineLib.LearningMachine3
     public class LM3 : STDLearningMachine
     {
         private LM3Memory mLM3Memory;
+        
 
-        public LM3()
+        public LM3(string programPath)
         {
             mLM3Memory = new LM3Memory();
         }
@@ -18,10 +19,12 @@ namespace LearningMachineLib.LearningMachine3
             throw new NotImplementedException();
         }
 
-        //Need parametr - program
-        public override void Fill(string program)
+        public override void Fill()
         {
-            throw new NotImplementedException();
+            LM3ProgramXMLLoader loader = new LM3ProgramXMLLoader(
+                new LM3MemoryFiller(mLM3Memory));
+
+            loader.Load(mProgramPath);
         }
 
         // Returns IMemoryOrganisation

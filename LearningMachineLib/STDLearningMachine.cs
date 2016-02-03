@@ -9,7 +9,8 @@ namespace LearningMachineLib
 {
     public abstract class STDLearningMachine : LearningMachine
     {
-        private int currentAddress;
+        protected int currentAddress;
+        protected string mProgramPath;
 
         // Executor
 

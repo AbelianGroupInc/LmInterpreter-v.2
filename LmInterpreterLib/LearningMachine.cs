@@ -7,7 +7,7 @@
         protected IInputSystem mInputStream;
 
         public abstract void Execute();
-        public abstract void Fill(string program);
+        public abstract void Fill();
         public abstract IMemoryOrganisation GetMemorySection();
     }
 }
