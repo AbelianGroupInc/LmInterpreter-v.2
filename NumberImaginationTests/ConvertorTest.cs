@@ -10,37 +10,37 @@ namespace NumberImaginationTests
         [TestMethod]
         public void ConvetToSTDTestOne()
         {
-            string number = Converter.Convert(new DecToSTDConverter(2), "40");
+            string number = Converter.ConvertFromDecNumber(new ToSTDConverter(2), "40");
             Assert.AreEqual("101000", number);
         }
         [TestMethod]
         public void ConvetToSTDTestTwo()
         {
-            string number = Converter.Convert(new DecToSTDConverter(2), "-40");
+            string number = Converter.ConvertFromDecNumber(new ToSTDConverter(2), "-40");
             Assert.AreEqual("-101000", number);
         }
         [TestMethod]
         public void ConvetToInversTestOne()
         {
-            string number = Converter.Convert(new DecToInversCodeConverter(), "777");
-            Assert.AreEqual("1100001001", number);
+            string number = Converter.ConvertFromDecNumber(new ToInverseCodeConverter(11), "777");
+            Assert.AreEqual("01100001001", number);
         }
         [TestMethod]
         public void ConvetToInversTestTwo()
         {
-            string number = Converter.Convert(new DecToInversCodeConverter(), "-777");
+            string number = Converter.ConvertFromDecNumber(new ToInverseCodeConverter(11), "-777");
             Assert.AreEqual("10011110110", number);
         }
         [TestMethod]
         public void ConvetToComplementTestOne()
         {
-            string number = Converter.Convert(new DecToComplCodeConverter(), "312");
-            Assert.AreEqual("100111000", number);
+            string number = Converter.ConvertFromDecNumber(new ToComplCodeConverter(10), "312");
+            Assert.AreEqual("0100111000", number);
         }
         [TestMethod]
         public void ConvetToComplementTestTwo()
         {
-            string number = Converter.Convert(new DecToComplCodeConverter(), "-312");
+            string number = Converter.ConvertFromDecNumber(new ToComplCodeConverter(10), "-312");
             Assert.AreEqual("1011001000", number);
         }
     }
