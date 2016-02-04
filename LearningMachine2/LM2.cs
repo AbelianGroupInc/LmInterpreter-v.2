@@ -11,11 +11,11 @@ namespace LearningMachine2
     // Learning Machine 3 Implementation
     class LM2 : STDLearningMachine
     {
-        // LM2 Memory
+        private LM2Memory mLM2Memory;
 
         public LM2(string programPath) : base (programPath)
         {
-            // LM2 Memory initialization
+            mLM2Memory = new LM2Memory();
         }
 
         public override void Execute()
@@ -23,19 +23,19 @@ namespace LearningMachine2
             throw new NotImplementedException();
         }
 
-        public override IMemoryOrganisation GetMemorySection()
+        public override void Fill()
         {
             throw new NotImplementedException();
+        }
+
+        public override IMemoryOrganisation GetMemorySection()
+        {
+            return new LMMemoryToIMemoryOrganisation(mLM2Memory);
         }
 
         public void SetCellByAddress(string address, IMemoryCell cell)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void Fill()
-        {
-            throw new NotImplementedException();
+            mLM2Memory.SetCellByAddress(address, cell);
         }
     }
 }

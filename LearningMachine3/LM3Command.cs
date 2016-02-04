@@ -7,7 +7,7 @@ using LearningMachineLib;
 
 namespace LearningMachineLib.LearningMachine3
 {
-    class LM3Command : LMCommand
+    public class LM3Command : LMCommand
     {
         private int mA1;
         private int mA2;

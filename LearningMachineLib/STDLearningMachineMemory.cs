@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LearningMachineLib
 {
-    public abstract class STDLearningMachineMemory : IMemoryOrganisation
+    public abstract class STDLearningMachineMemory
     {
         private Dictionary<string, IMemoryCell> mMemoryCellList;
         private Dictionary<string, string> mMemoryCellsNames;
