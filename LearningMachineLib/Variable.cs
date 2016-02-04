@@ -17,7 +17,7 @@ namespace LearningMachineLib
 
         public Variable(string value)
         {
-            string decRepresentationString = Converter.ConvertToDecNumber(new FromSTDConverter(10), value);
+            string decRepresentationString = Converter.ConvertToDecNumber(new FromSTDConverter(16), value);
             BigInteger decRepresentationBigInt = BigInteger.Parse(decRepresentationString,
                 System.Globalization.NumberStyles.AllowLeadingSign);
 

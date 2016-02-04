@@ -9,6 +9,7 @@ namespace NumberImagination.ConverterLib
     public class FromComplCodeConverter : IToDecNumberConverter
     {
         public FromComplCodeConverter() { }
+
         public string Convert(string number)
         {
             NumberManipulation.CheckNumberCorrectness(number, NumberManipulation.cBinNumberSystem);

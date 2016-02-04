@@ -48,11 +48,11 @@ namespace LearningMachineTests
         {
             LM3Memory memory = new LM3Memory();
             LM3MemoryFiller filler = new LM3MemoryFiller(memory);
-            LM3Command command = new LM3Command("86", 1001, 1001, 1001);
+            LM3Command command = new LM3Command("86", 4097, 4097, 4097);
 
             filler.AddCommand("0101", "86", "1001", "1001", "1001");
 
-            Assert.AreEqual(command, memory.GetCellByAddress("0100"));
+            Assert.AreEqual(command.ToString(), memory.GetCellByAddress("0257").ToString());
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace LearningMachineTests
             filler.AddCommand("0101", "86", "1001", "1001", "1001");
             filler.AddCommandPosition("0101", position);
 
-            Assert.AreEqual(position, memory.GetCellPositionByAddress("0100"));
+            Assert.AreEqual(position, memory.GetCellPositionByAddress("0257"));
         }
 
         [TestMethod]
@@ -81,7 +81,7 @@ namespace LearningMachineTests
             filler.AddCommandPosition("0101", position);
             filler.AddName("0101", "X");
 
-            Assert.AreEqual("X", memory.GetCellNameByAddress("0100"));
+            Assert.AreEqual("X", memory.GetCellNameByAddress("257"));
         }
     }
 }

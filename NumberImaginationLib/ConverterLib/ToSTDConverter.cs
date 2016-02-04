@@ -25,8 +25,16 @@ namespace NumberImagination.ConverterLib
                 System.Globalization.NumberStyles.AllowLeadingSign);
 
             return NumberManipulation.IsMinusNumber(number) ? 
-                '-' + DoConvertation(convertatingNumber) : 
-                DoConvertation(convertatingNumber);
+                '-' + DoConvertationFirstStage(convertatingNumber) : 
+                DoConvertationFirstStage(convertatingNumber);
+        }
+
+        private string DoConvertationFirstStage(BigInteger number)
+        {
+            if (number == 0)
+                return "0";
+            else
+                return DoConvertation(number);
         }
 
         // Implements convertation algorithm

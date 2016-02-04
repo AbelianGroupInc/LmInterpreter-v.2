@@ -58,6 +58,9 @@ namespace LearningMachineLib
         #region Methods for memory cell content manipulation
         public IMemoryCell GetCellByAddress(string address)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
             TestForCellEmptyness(address);
@@ -66,6 +69,9 @@ namespace LearningMachineLib
         }
         public void SetCellByAddress(string address, IMemoryCell cellContent)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
             mMemoryCellList[address] = cellContent;
@@ -77,9 +83,12 @@ namespace LearningMachineLib
 
         public string GetCellNameByAddress(string address)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
-            if (mMemoryCellsNames.ContainsValue(address))
+            if (mMemoryCellsNames.ContainsKey(address))
                 return mMemoryCellsNames[address];
             else
                 return address;
@@ -87,6 +96,9 @@ namespace LearningMachineLib
 
         public void SetCellNameByAddress(string address, string name)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
             mMemoryCellsNames[address] = name;
@@ -98,6 +110,9 @@ namespace LearningMachineLib
 
         public ICommandPosition GetCellPositionByAddress(string address)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
             return mMemoryCellsPositions[address];
@@ -105,6 +120,9 @@ namespace LearningMachineLib
 
         public void SetCellPositionByAddress(string address, CommandPosition commandPosition)
         {
+            // Nonsignificant zeroes deleting
+            address = Convert.ToInt32(address).ToString();
+
             TestForAddressCorrectness(address);
 
             mMemoryCellsPositions[address] = commandPosition;
