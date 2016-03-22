@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace LearningMachineLib
 {
+    // The adapter for LMMemories
     public class LMMemoryToIMemoryOrganisation : IMemoryOrganisation
     {
         STDLearningMachineMemory mLMMemory;
@@ -12,17 +13,18 @@ namespace LearningMachineLib
             mLMMemory = memory;
         }
 
-        public IMemoryCell GetCellByAddress(string address)
-        {
-            return mLMMemory.GetCellByAddress(address);
-        }
-
+        // Possible problem with registers
         public Dictionary<string, IMemoryCell> MemoryCellList
         {
-            get 
+            get
             {
                 return mLMMemory.MemoryCellList;
             }
+        }
+
+        public IMemoryCell GetCellByAddress(string address)
+        {
+            return mLMMemory.GetCellByAddress(address);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// The general class for std memory of machines machnies overrides some parts and extends this class
 namespace LearningMachineLib
 {
     public abstract class STDLearningMachineMemory
